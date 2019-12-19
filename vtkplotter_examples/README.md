@@ -4,9 +4,9 @@ Check out more examples in the above directories.
 ## Get Started tutorial
 Download the tutorial:
 ```bash
-git clone https://github.com/marcomusy/vtkplotter.git
-cd vtkplotter/examples
-python tutorial.py  # on mac OSX try 'pythonw' instead
+git clone https://github.com/marcomusy/vtkplotter-examples.git
+cd vtkplotter_examples/vtkplotter_examples
+python tutorial.py
 ```
 
 The content of the python script and its output is the following:
@@ -21,7 +21,7 @@ vp = Plotter(title='first example')
 # (The actual mesh corresponds to the outer shape of
 # an embryonic mouse limb at about 11 days of gestation).
 # Choose a tomato color for the internal surface of the mesh.
-vp.load(datadir+"270.vtk").c("aqua").bc("tomato") 
+vp.load(datadir+"270.vtk").c("aqua").bc("tomato")
 vp.show()  # picks what is automatically stored in python list vp.actors
 # Press Esc to close the window and exit python session, or q to continue
 ```
@@ -29,7 +29,7 @@ vp.show()  # picks what is automatically stored in python list vp.actors
 
 
 ```python
-# Load 3 actors assigning each a different color, 
+# Load 3 actors assigning each a different color,
 # by default use their file names as legend entries.
 # No need to use any variables, as actors are stored internally in vp.actors:
 vp = Plotter(title='3 shapes')
@@ -135,7 +135,7 @@ vp.show()
 
 ​
 ### Some useful *Plotter* attributes
-Remember that you always have full access to all standard VTK native objects 
+Remember that you always have full access to all standard VTK native objects
 (e.g. vtkRenderWindowInteractor, vtkRenderer and vtkActor through *vp.interactor, vp.renderer, vp.actors*... etc).
 ```python
 vp = vtkplotter.Plotter() #e.g.
@@ -174,6 +174,3 @@ r, g, b = colorMap(value, name='jet', vmin=-10.2, vmax=123)
 ![colormaps](https://user-images.githubusercontent.com/32848391/50738804-577e1680-11d8-11e9-929e-fca17a8ac6f3.jpg)
 
 A list of available vtk color names is given [here](https://vtkplotter.embl.es/vtkcolors.html).
-
-
-

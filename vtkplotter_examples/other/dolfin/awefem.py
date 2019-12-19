@@ -33,11 +33,6 @@ def awefem(mesh, t, source_loc=None):
     v = TestFunction(V)
 
     # Discretization
-    # ∂tt u = c²Δu
-    # (uN+1 - 2uN + uN-1)/dt² = c²Δu
-    # ∫ (uN+1 - 2uN + uN-1)v dx - (dt*c)²Δu v dx
-    # ∫ (uN+1 - 2uN + uN-1)v dx + (dt*c)²∇u·∇v dx
-    # ∫ (uN+1 - 2uN + uN-1)v dx + (dt*c)²∇(uN+1 + 2uN + uN-1)·∇v dx
     c = 6
     dt = t[1] - t[0]
     u0 = Function(V)  # u0 = uN-1

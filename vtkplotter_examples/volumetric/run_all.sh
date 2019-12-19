@@ -10,10 +10,10 @@ echo
 echo
 
 echo Running readVolumeAsIsoSurface.py
-python readVolumeAsIsoSurface.py 
+python readVolumeAsIsoSurface.py
 
 echo Running readVolume.py
-python readVolume.py 
+python readVolume.py
 
 echo Running probePoints.py
 python probePoints.py
@@ -54,6 +54,9 @@ python streamlines1.py
 echo Running streamlines2.py
 python streamlines2.py
 
+echo Running streamlines3.py
+python streamlines3.py
+
 echo Running office.py
 python office.py
 
@@ -89,4 +92,3 @@ python vol2points.py
 
 echo Running tet_mesh_ugrid.py
 python tet_mesh_ugrid.py
-
