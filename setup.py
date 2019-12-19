@@ -1,7 +1,7 @@
 from setuptools import setup
 
 try:
-    VERSIONFILE = "examples/version.py"
+    VERSIONFILE = "vtkplotter_examples/version.py"
     verstrline = open(VERSIONFILE, "rt").read()
     verstr = verstrline.split('=')[1].replace('\n','').replace("'","")
 except:
@@ -11,7 +11,7 @@ except:
 setup(
     name='vtkplotter-examples',
     version=verstr,
-    packages=['vtkplotter-examples'],
+    packages=['vtkplotter_examples'],
     scripts=[],
     install_requires=['vtkplotter'],
     description="""Repository for vtkplotter examples""",
@@ -94,7 +94,7 @@ setup(
 #    git clone https://github.com/marcomusy/vtkplotter.git
 #    cd vtkplotter
 #    pip3 -v install . --user
-#    
+#
 #    cd
 #    pip3 install git+https://github.com/FEniCS/fiat.git --upgrade
 #    pip3 install git+https://github.com/FEniCS/ufl.git  --upgrade
@@ -105,29 +105,3 @@ setup(
 #    ninja -j3 install
 #    cd ../python
 #    pip3 -v install . --user
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

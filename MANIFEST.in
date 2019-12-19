@@ -1,4 +1,4 @@
-include examples/*
-include examples/data/*
-include examples/data/images/*
-include examples/data/timecourse1d/*
+include vtkplotter_examples/*
+include vtkplotter_examples/data/*
+include vtkplotter_examples/data/images/*
+include vtkplotter_examples/data/timecourse1d/*
