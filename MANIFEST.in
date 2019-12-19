@@ -1,0 +1,4 @@
+include examples/*
+include examples/data/*
+include examples/data/images/*
+include examples/data/timecourse1d/*
