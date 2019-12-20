@@ -1,16 +1,15 @@
 from setuptools import setup
 
-try:
-    VERSIONFILE = "vtkplotter_examples/version.py"
-    verstrline = open(VERSIONFILE, "rt").read()
-    verstr = verstrline.split('=')[1].replace('\n','').replace("'","")
-except:
-    verstr='unknown'
+# try:
+#     import vtkplotter
+#     verstr = vtkplotter.__version__
+# except:
+#     verstr='unknown'
 
 ##############################################################
 setup(
     name='vtkplotter-examples',
-    version=verstr,
+    version='2019.4.10',
     packages=['vtkplotter_examples'],
     scripts=[],
     install_requires=['vtkplotter'],
