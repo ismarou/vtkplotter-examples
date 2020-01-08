@@ -10,13 +10,12 @@ import numpy as np
 N = 2000
 nuclei = np.random.rand(N, 3) - (0.5,0.5,0.5)
 ncl = Points(nuclei).clean(0.1) # clean makes points evenly spaced
-nuclei = ncl.getPoints()
+nuclei = ncl.points()
 
-actor = voronoi3D(nuclei, tol=.001)
-#print(len(actor.info['cells']), actor.info['volumes'])
+mesh = voronoi3D(nuclei, tol=.001)
+#print(len(mesh.info['cells']), mesh.info['volumes'])
 
-pts_inside = actor.insidePoints(nuclei)
+pts_inside = mesh.insidePoints(nuclei)
 inpts = Points(pts_inside, r=50, c='r', alpha=0.2)
 
-show(actor, inpts)
-
+show(mesh, inpts)

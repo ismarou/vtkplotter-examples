@@ -1,5 +1,4 @@
-"""
-Dijkstra algorithm to compute the graph geodesic.
+"""Dijkstra algorithm to compute the graph geodesic.
 
 Takes as input a polygonal mesh and performs
 a shortest path calculation 20 times.
@@ -15,4 +14,4 @@ for i in range(20):
 
 doc = Text(__doc__, c="w")
 
-show(s, Earth(lw=1), doc, paths, viewup="z")
+show(s, Earth(), doc, paths, viewup="z")

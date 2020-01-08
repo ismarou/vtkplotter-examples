@@ -24,6 +24,9 @@ python probeLine.py
 echo Running probePlane.py
 python probePlane.py
 
+echo Running probePlaneUGrid.py
+python probePlaneUGrid.py
+
 echo Running volumeOperations.py
 python volumeOperations.py
 

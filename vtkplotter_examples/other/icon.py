@@ -1,5 +1,5 @@
 """
-Make a icon actor to indicate orientation
+Make a icon to indicate orientation
 and place it in one of the 4 corners
 within the same renderer.
 """

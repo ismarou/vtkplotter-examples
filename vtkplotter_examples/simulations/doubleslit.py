@@ -19,7 +19,7 @@ slit2 = list(slit1 + array([1e-5, 0, 0]))             # a shifted copy of slit 1
 slits = slit1 + slit2
 # slits += list(slit1 + array([-2e-5, 1e-5, 0]))  # add an other copy of slit1
 # slits = [(cos(x)*4e-5, sin(x)*4e-5, 0) for x in arange(0,2*pi, .1)] # Arago spot
-# slits = Grid(sx=1e-4, sy=1e-4, resx=9, resy=9).getPoints() # a square lattice
+# slits = Grid(sx=1e-4, sy=1e-4, resx=9, resy=9).points() # a square lattice
 
 vp = Plotter(title="The Double Slit Experiment", axes=9, verbose=0, bg="black")
 
@@ -29,15 +29,17 @@ screen.wireframe(False).phong()  # show it as a solid plane (not as wireframe)
 k = 0.0 + 1j * 2 * pi / lambda1  # complex wave number
 norm = len(slits) * 5e5
 amplitudes = []
+screen_pts = screen.points()
 
-for i, x in enumerate(screen.getPoints()):
+for i, x in enumerate(screen_pts):
     psi = 0
     for s in slits:
         r = mag(x - s)
         psi += exp(k * r) / r
     psi2 = real(psi * conj(psi))  # psi squared
     amplitudes.append(psi2)
-    screen.setPoint(i, x + [0, 0, psi2 / norm])  # elevate grid in z
+    screen_pts[i] = x + [0, 0, psi2 / norm]
+screen.points(screen_pts)
 
 screen.pointColors(amplitudes, cmap="hot")
 

@@ -32,7 +32,7 @@ for t1 in pb.range():  # for each time point
     if t1 == nc - 1:
         t2 = t1  # avoid index overflow with last time point
 
-    vp.actors = [doc]  # clean up the list of actors at each iteration
+    vp.actors = [doc]  # clean up the list of meshes at each iteration
     vp += Cylinder([0, 0, -15], r=260, height=10, c="gray", res=60)
     vp += Cylinder([0, 0, 10], r=260, height=50, c="gray", res=60).wireframe(1)
 
@@ -44,8 +44,8 @@ for t1 in pb.range():  # for each time point
         pts.append(p + vector(gx / 4, gy / 4, gz + c1 * 20))
         cols.append([0.0, c1, cgrad])  # RGB color
 
-    vp += Points(pts, c=cols, alpha=1.0, r=6)   # points actor
-    vp += Points(pts, c=cols, alpha=0.1, r=30)  # halos actor
+    vp += Points(pts, c=cols, alpha=1.0, r=6)   # points
+    vp += Points(pts, c=cols, alpha=0.1, r=30)  # halos
     vp.show()  # show the four new actors at each iteration
     vp.camera.Azimuth(10 / nc)  # rotate camera by a fraction
     pb.print()

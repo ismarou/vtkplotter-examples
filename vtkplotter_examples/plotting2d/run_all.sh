@@ -21,6 +21,9 @@ python customAxes.py
 echo Running fonts.py
 python fonts.py    
 
+echo Running simple1Dplot.py
+python simple1Dplot.py
+
 echo Running fxy.py
 python fxy.py
 

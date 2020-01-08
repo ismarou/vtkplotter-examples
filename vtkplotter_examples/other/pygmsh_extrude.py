@@ -24,10 +24,10 @@ mesh = pygmsh.generate_mesh(geom)
 
 from vtkplotter import *
 
-a1 = Actor( mesh.points ).pointSize(3)
-a2 = Actor([mesh.points, mesh.cells['triangle']])
-a3 = Actor([mesh.points, mesh.cells['tetra']])
-a3.cutWithPlane(normal=(-1,0,-1))
-a4 = Actor([mesh.points, list(mesh.cells['triangle']) + list(mesh.cells['tetra'])])
+m1 = Mesh( mesh.points ).pointSize(3)
+m2 = Mesh([mesh.points, mesh.cells['triangle']])
+m3 = Mesh([mesh.points, mesh.cells['tetra']])
+m3.cutWithPlane(normal=(-1,0,-1))
+m4 = Mesh([mesh.points, list(mesh.cells['triangle']) + list(mesh.cells['tetra'])])
 
-show([a1, a2, (a3, a1.box()), a4.lw(0.1)], N=4)
+show([m1, m2, (m3, m1.box()), m4.lw(0.1)], N=4)

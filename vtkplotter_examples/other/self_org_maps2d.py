@@ -1,4 +1,4 @@
-"""Self organizing maps."""
+"""Self organizing maps"""
 # -----------------------------------------------------------------------------
 # Copyright 2019 (C) Nicolas P. Rougier
 # Released under a BSD two-clauses license
@@ -47,11 +47,12 @@ class SOM:
             # Draw network
             if i>500 and not i%20 or i==n_epoch-1:
                 x, y, z = [self.codebook[:,i].reshape(n,n) for i in range(3)]
-                grd = Grid(resx=n-1, resy=n-1)
+                grd = Grid(resx=n-1, resy=n-1, c='g')
                 grd.wireframe(False).lw(0.5).bc('lightblue').flat()
+                grdpts = grd.points()
                 for i in range(n):
                     for j in range(n):
-                        grd.setPoint(i*n+j, (x[i,j], y[i,j], z[i,j]))
+                        grdpts[i*n+j] = (x[i,j], y[i,j], z[i,j])
                 show(doc, pts, grd, axes=6, bg='w', azimuth=2, interactive=False)
 
         interactive()
@@ -68,6 +69,5 @@ if __name__ == "__main__":
     s = Sphere(res=90).cutWithPlane(origin=(0,-.3,0), normal='y').clean(0.01)
 
     som = SOM((len(P), 3), D)
-    som.samples = s.getPoints()
+    som.samples = s.points()
     som.learn(n_epoch=7000, sigma=(1, 0.01), lrate=(1, 0.01))
-

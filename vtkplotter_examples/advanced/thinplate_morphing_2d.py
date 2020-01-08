@@ -28,7 +28,7 @@ class Morpher:
         ptmoved = np.multiply((self.pttarget-self.ptsource).T, (1+self.params)).T + self.ptsource
         self.morphed_source = thinPlateSpline(self.source, self.ptsource, ptmoved)
 
-        d = self.morphed_source.getPoints() - self.target.getPoints()
+        d = self.morphed_source.points() - self.target.points()
         chi2 = np.sum(np.multiply(d,d))/self.ndf
         if chi2 < self.chi2:
             print("Emin ->", chi2)
@@ -42,8 +42,8 @@ class Morpher:
         self.morphed_source = self.source.clone()
 
         indexes = list(range(0,self.source.N(), int(self.source.N()/self.ndf)))
-        self.ptsource = self.source.getPoints()[indexes]
-        self.pttarget = self.target.getPoints()[indexes]
+        self.ptsource = self.source.points()[indexes]
+        self.pttarget = self.target.points()[indexes]
         self.ndf = len(indexes)
 
         bnds = [(-self.bound, self.bound)] * self.ndf

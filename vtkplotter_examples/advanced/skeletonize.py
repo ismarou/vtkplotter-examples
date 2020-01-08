@@ -8,11 +8,11 @@ from vtkplotter import *
 N = 9    # nr of iterations
 f = 0.1  # fraction of neighbours
 
-pts = load(datadir+"man.vtk").decimate(0.1).getPoints()
-# pts = load(datadir+'spider.ply').getPoints()
-# pts = load(datadir+'magnolia.vtk').subdivide().getPoints()
-# pts = load(datadir+'pumpkin.vtk').getPoints()
-# pts = load(datadir+'teapot.vtk').getPoints()
+pts = load(datadir+"man.vtk").decimate(0.1).points()
+# pts = load(datadir+'spider.ply').points()
+# pts = load(datadir+'magnolia.vtk').subdivide().points()
+# pts = load(datadir+'pumpkin.vtk').points()
+# pts = load(datadir+'teapot.vtk').points()
 
 a = Points(pts)
 

@@ -16,8 +16,8 @@ sil.SetCamera(plt.camera)
 silMapper = vtk.vtkPolyDataMapper()
 silMapper.SetInputConnection(sil.GetOutputPort())
 
-actor = Actor()
-actor.lw(4).c('black').SetMapper(silMapper)
+mesh = Mesh()
+mesh.lw(4).c('black').SetMapper(silMapper)
 
-plt.add(actor) # add() also renders the scene
+plt.add(mesh) # add() also renders the scene
 interactive()

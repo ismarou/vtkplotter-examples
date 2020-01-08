@@ -10,14 +10,14 @@ from vtkplotter import Plotter, printc, datadir
 
 vp = Plotter(shape=(2, 1), axes=4)
 
-act = vp.load(datadir+"magnolia.vtk", c="v")
+mesh = vp.load(datadir+"magnolia.vtk", c="v")
 
-vp.show(act, at=0)
-vp.show(act, at=1)
+vp.show(mesh, at=0)
+vp.show(mesh, at=1)
 
 # add a button to the current renderer (e.i. nr1)
 def buttonfunc():
-    act.alpha(1 - act.alpha())  # toggle mesh transparency
+    mesh.alpha(1 - mesh.alpha())  # toggle mesh transparency
     bu.switch()                 # change to next status
     printc(bu.status(), box="_", dim=True)
 

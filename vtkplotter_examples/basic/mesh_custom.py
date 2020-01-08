@@ -1,6 +1,6 @@
 """
 Example on how to specify a color for each
-individual cell or point of an actor's mesh.
+individual cell or point of a Mesh.
 useDepthPeeling may improve the rendering of transparent objects.
 """
 from vtkplotter import *
@@ -13,7 +13,7 @@ doc = Text(__doc__, pos=1, c="w")
 man = load(datadir+"man.vtk")
 
 # let the scalar be the z coordinate of the mesh vertices
-scals = man.getPoints()[:, 2]
+scals = man.points()[:, 2]
 
 # custom color map with specified opacities
 #mymap = ["darkblue", "cyan", (1, 0, 0)]

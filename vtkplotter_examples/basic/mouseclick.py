@@ -5,16 +5,16 @@ click of the mouse causes a call to a custom function.
 from vtkplotter import Plotter, printc, Text, datadir
 
 
-def onLeftClick(actor):
-    printc("Left   button pressed on", [actor], c="g")
+def onLeftClick(mesh):
+    printc("Left   button pressed on", [mesh], c="g")
 
 
-def onMiddleClick(actor):
-    printc("Middle button pressed on", [actor], c="y")
+def onMiddleClick(mesh):
+    printc("Middle button pressed on", [mesh], c="y")
 
 
-def onRightClick(actor):
-    printc("Right  button pressed on", [actor], c="r")
+def onRightClick(mesh):
+    printc("Right  button pressed on", [mesh], c="r")
 
 
 vp = Plotter(verbose=0)

@@ -1,12 +1,12 @@
-"""Lock an object orientation to the scene camera. 
+"""Lock an object orientation to the scene camera.
 """
 from vtkplotter import Sphere, Text, Plotter
 
 plt = Plotter(axes=1, interactive=0)
 
 sp = Sphere().wireframe()
-tx1 = Text("Fixed point",  sp.getPoint( 10), s=0.07, c="lb")
-tx2 = Text("Follow point", sp.getPoint(144), s=0.07, c="lg")
+tx1 = Text("Fixed Text",  sp.points(10), s=0.07, c="lb")
+tx2 = Text("Follower Text", sp.points(144), s=0.07, c="lg")
 
 # a camera must exist prior to calling followCamera()
 plt.show(sp)

@@ -10,6 +10,6 @@ s1.distanceToMesh(s2, signed=True, negate=False)
 
 s1.addScalarBar(title='Signed\nDistance', c='w')
 
-#print(s1.scalars("Distance"))
+print(s1.getPointArray("Distance"))
 
 show(s1, s2, Text(__doc__))

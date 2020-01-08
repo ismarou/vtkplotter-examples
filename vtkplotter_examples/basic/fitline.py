@@ -27,7 +27,7 @@ for i in range(500):
 vp += Points(data, r=10, c="yellow")
 
 # the first fitted slope direction is stored
-# in actor.info['slope] and actor.info['normal]
+# in mesh.info['slope] and mesh.info['normal]
 print("Line Fit slope = ", vp.actors[0].info["slope"])
 
 plane = fitPlane(data)  # fit a plane

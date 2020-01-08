@@ -8,14 +8,15 @@ from vtkplotter import *
 
 ##############################################################################
 def myfnc(key):
-    if not vp.clickedActor or key != "c":
-        printc("click an actor and press c.", c="r")
+    mesh = vp.clickedActor
+    if not mesh or key != "c":
+        printc("click a mesh and press c.", c="r")
         return
-    printc("clicked actor   :", vp.clickedActor.legend(), c=4)
-    printc("clicked 3D point:", vp.picked3d, c=4)
+    printc("clicked mesh    :", mesh.filename[-40:], c=4)
+    printc("clicked 3D point:", mesh.picked3d, c=4)
     printc("clicked renderer:", [vp.renderer], c=2)
 
-    vp.add(Sphere(pos=vp.picked3d, r=0.005, c="v"))
+    vp.add(Sphere(pos=mesh.picked3d, r=0.004, c="v"))
 
 
 ##############################################################################

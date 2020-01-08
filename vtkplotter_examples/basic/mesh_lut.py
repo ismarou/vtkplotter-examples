@@ -3,7 +3,7 @@ from vtkplotter import makeLUT, Sphere
 mesh = Sphere().lineWidth(0.1)
 
 # create some data array to be associated to points
-data = mesh.getPoints()[:,2]
+data = mesh.points()[:,2]
 data[10:20] = float('nan')
 
 # Build a lookup table of colors:

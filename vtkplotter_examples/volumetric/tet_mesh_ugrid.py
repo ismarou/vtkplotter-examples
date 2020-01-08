@@ -1,6 +1,6 @@
 """Read a tetrahedral mesh from a
 vtkUnstructuredGrid object and visualize
-it as either a Volume or a mesh Actor
+it as either a Volume or a Mesh
 """
 from vtkplotter import *
 
@@ -14,7 +14,7 @@ vol = Volume(ug).color(cmap)
 # if False will only show the outer surface:
 settings.visibleGridEdges = True
 
-mesh = Actor(ug).color(cmap).alpha(0.2).addScalarBar(c='w')
+mesh = Mesh(ug).color(cmap).alpha(0.2).addScalarBar(c='w')
 
 txt = Text(__doc__, c='w')
 

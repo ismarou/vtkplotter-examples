@@ -15,6 +15,6 @@ l.crop(0.3, 0.3) # crop top and bottom 30%
 l.pos(2,0,0)
 
 p = Point()
-box = l.box() # return the bounding box of an actor
+box = l.box() # return the bounding box of a mesh
 
 show(p, l, box, axes=8)

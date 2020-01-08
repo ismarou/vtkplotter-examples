@@ -5,7 +5,6 @@ Any point on the mesh close to a source landmark will
 be moved to a place close to the corresponding target landmark.
 The points in between are interpolated using Bookstein's algorithm.
 """
-
 from vtkplotter import *
 import numpy as np
 
@@ -14,18 +13,19 @@ np.random.seed(2)
 grids = []
 for i in range(10):
     grids.append(Grid([0, 0, i / 10.0], resx=100, resy=100))
-act = merge(grids)  # merge grids into a single object
+mesh = merge(grids)  # merge grids into a single object
 
-idxs = np.random.randint(0, act.N(), 10)  # pick 10 indexes
+idxs = np.random.randint(0, mesh.N(), 10)  # pick 10 indexes
+pts = mesh.points()[idxs]
 
 ptsource, pttarget = [], []
-for i in idxs:
-    ptold = act.getPoint(i) + np.random.randn(3) * 0.02
+for pt in pts:
+    ptold = pt + np.random.randn(3) * 0.02
     ptsource.append(ptold)
     ptnew = ptold + [0, 0, np.random.randn(1) * 0.10]  # move in z
     pttarget.append(ptnew)
 
-warped = thinPlateSpline(act, ptsource, pttarget)
+warped = thinPlateSpline(mesh, ptsource, pttarget)
 warped.alpha(0.2).color("b")
 # print(warped.getTransform())
 

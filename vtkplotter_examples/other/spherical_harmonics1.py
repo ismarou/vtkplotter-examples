@@ -1,6 +1,6 @@
 """
 Example on how to use the intersectWithLine() method:
- intersect an actor with lines from the origin
+ intersect a mesh with lines from the origin
  and draw the intersection points in blue
 
 Second part of the example:
@@ -94,10 +94,10 @@ for i, long in enumerate(np.linspace(0, 360, num=agrid_reco_finer.shape[1], endp
         p = spher2cart(agrid_reco_finer[j][i], th, ph)
         pts2.append(p)
 
-act1 = Points(pts1, r=5, c="b", alpha=1)
-act1_col = Points(pts1colored, r=8, c="k", alpha=0.5)
-act2 = Points(pts2, r=3, c="r", alpha=0.5)
-act2.clean(0.01) # impose point separation of 1% of the bounding box size
+mesh1 = Points(pts1, r=5, c="b", alpha=1)
+mesh1_col = Points(pts1colored, r=8, c="k", alpha=0.5)
+mesh2 = Points(pts2, r=3, c="r", alpha=0.5)
+mesh2.clean(0.01) # impose point separation of 1% of the bounding box size
 
 comment = Text('spherical harmonics\nexpansion of order '+str(lmax))
-show(act2, comment, at=1, interactive=True)
+show(mesh2, comment, at=1, interactive=True)

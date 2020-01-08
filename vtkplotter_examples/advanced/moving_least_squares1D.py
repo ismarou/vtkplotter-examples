@@ -3,8 +3,6 @@ This example shows how to use a variant of a 1 dimensional
 Moving Least Squares (MLS) algorithm to project a cloud
 of unordered points to become a smooth line.
 The parameter f controls the size of the local regression.
-If showNLines>0 an actor is built demonstrating the
-details of the regression for some random points
 """
 from __future__ import division, print_function
 
@@ -33,7 +31,7 @@ for i in range(1, N):
     if i == N-1:
         a.clean(tol=0.01)
 
-    print("iteration", i, "#points:", len(a.getPoints()))
+    print("iteration", i, "#points:", len(a.points()))
     show(a, at=i)
 
 interactive()

@@ -12,7 +12,7 @@ vp.actors = objs # set Plotter internal list of objs to be shown
 # switch off all the others
 for i in range(1, len(objs)): objs[i].c('gold').lw(2.0).off()
 
-k = 0 # visible actor index
+k = 0 # visible mesh index
 def sliderfunc(widget, event):
     global k
     vp.actors[k].off() #switch off

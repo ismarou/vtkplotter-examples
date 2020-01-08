@@ -11,6 +11,6 @@ h2 = histogram(data2,
 h2.z(0.1) # put h2 in front of h1
 
 # pick the 16th bin and color it tomato
-h1.getActors()[15].color('tomato').alpha(0.7)
+h1.getMesh(15).color('tomato').alpha(0.7)
 
 show(h1, h2, bg='white', axes=1)

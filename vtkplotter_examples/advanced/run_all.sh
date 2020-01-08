@@ -35,6 +35,12 @@ python recosurface.py
 echo Running skeletonize.py
 python skeletonize.py
 
+echo Running centerline1.py
+python centerline1.py
+
+echo Running centerline2.py
+python centerline2.py
+
 echo Running mesh_smoothers.py
 python mesh_smoothers.py
 

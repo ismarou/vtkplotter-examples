@@ -23,7 +23,7 @@ print(__doc__)
 # Declare an instance of the class
 vp = Plotter()
 
-# Load a vtk file as a Actor(vtkActor) and visualize it.
+# Load a vtk file as a Mesh(vtkActor) and visualize it.
 # (The actual mesh corresponds to the outer shape of
 # an embryonic mouse limb at about 11 days of gestation).
 # Choose a tomato color for the internal surface of the mesh.
@@ -48,7 +48,7 @@ vp = Plotter(title="3 shapes")
 vp.load(datadir+"250.vtk", c=(1, 0.4, 0), alpha=0.3)
 vp.load(datadir+"270.vtk", c=(1, 0.6, 0), alpha=0.3)
 vp.load(datadir+"290.vtk", c=(1, 0.8, 0), alpha=0.3)
-print("Loaded vtkActors: ", len(vp.actors))
+print("Loaded meshes: ", len(vp.actors))
 vp.show()
 
 
@@ -57,7 +57,7 @@ vp.show()
 vp = Plotter(title="Example of splines through random points", verbose=0)
 
 pts = [(u(0, 2), u(0, 2), u(0, 2) + i) for i in range(8)]  # build python list of points
-vp += Points(pts, r=10) # add the actor points to the internal list of actors to be shown                                 # create the vtkActor
+vp += Points(pts, r=10) # add the points (vtkActor) to the internal list of actors to be shown
 
 for i in range(10):
     sp = Spline(pts, smooth=i/10, degree=2).color(i)
@@ -81,12 +81,12 @@ show(pts, bg="w", axes=0)
 # and show both before and after the cure in two separate renderers defined by shape=(1,2)
 vp = Plotter(shape=(1, 2), axes=False)
 a1 = vp.load(datadir+"beethoven.ply", alpha=1)
-coords1 = a1.getPoints()
+coords1 = a1.points()
 pts1 = Points(coords1, r=4, c="g").legend("#points = " + str(len(coords1)))
 vp.show(a1, pts1, at=0)
 
 a2 = a1.clone().subdivide(method=0)  # Increasing the number of points of the mesh
-coords2 = a2.getPoints()
+coords2 = a2.points()
 pts2 = Points(coords2, r=1).legend("#points = " + str(len(coords2)))
 vp.show(a2, pts2, at=1, interactive=True)
 

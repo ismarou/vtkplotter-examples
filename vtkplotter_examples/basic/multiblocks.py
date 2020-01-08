@@ -4,7 +4,7 @@
 from vtkplotter import *
 
 cube  = Cube(side=30)
-scals = cube.getPoints()[:,1]
+scals = cube.points()[:,1]
 poly  = cube.addPointScalars(scals, 'scalsname').polydata()
 
 img = load(datadir+'vase.vti').imagedata()
@@ -15,7 +15,7 @@ mblock = write([poly, img], filename) #returns a vtkMultiBlockData
 printc("~save wrote file", filename,
 	   "and corresponding directory", c='g')
 
-# load back from file into a list of actors/volumes
+# load back from file into a list of meshes/volumes
 mbacts = load(filename) # loads and unpacks a MultiBlockData obj
 
 show(mbacts, Text('load("file.vtm") #MultiBlockData', c='k'), bg='w')

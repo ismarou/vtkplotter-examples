@@ -7,18 +7,18 @@ N = 12
 sub = 0
 tol = 0.02
 
-actor = load(datadir+'250.vtk')
+mesh = load(datadir+'250.vtk')
 show(
-     actor.wireframe().c('blue'),
-     actor.boundaries(),
-     Point(actor.getPoint(30)),
-     actor.connectedCells(30), # cells polygons at vertex nr.30
+     mesh.wireframe().c('blue'),
+     mesh.boundaries(),
+     Point(mesh.points()[30]),
+     mesh.connectedCells(30), # cells polygons at vertex nr.30
      )
 
-s = actor.subdivide(sub).clean(tol)
+s = mesh.subdivide(sub).clean(tol)
 
-coords = s.getPoints()
-pactor = Points(coords)
+coords = s.points()
+pmesh = Points(s)
 
 tomerge = []
 for p in coords:
@@ -29,9 +29,8 @@ for p in coords:
 
     piece = d.connectedCells(0, returnIds=False)
 
-    show(pactor, d, piece, Point(p, c='r'), interactive=0)
+    show(pmesh, d, piece, Point(p, c='r'), interactive=0)
 
     tomerge.append(piece)
 
 show(merge(tomerge).clean(), interactive=1)
-

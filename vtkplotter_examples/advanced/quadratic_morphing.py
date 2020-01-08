@@ -48,18 +48,18 @@ class Morpher:
     def _func(self, pars):
         self.params = pars
 
+        #calculate chi2
         d2sum, n = 0.0, self.source.N()
-        srcpts = self.source.polydata().GetPoints()
-        mpts = self.msource.polydata().GetPoints()
+        srcpts = self.source.points()
+        mpts = self.msource.points()
         rng = range(0, n, int(n / self.subsample))
         for i in rng:
-            p1 = srcpts.GetPoint(i)
+            p1 = srcpts[i]
             p2 = self.transform(p1)
             tp = self.target.closestPoint(p2)
             d2sum += mag2(p2 - tp)
-            mpts.SetPoint(i, p2)
-
         d2sum /= len(rng)
+
         if d2sum < self.chi2:
             if d2sum < self.chi2 * 0.99:
                 print("Emin ->", d2sum)
@@ -80,7 +80,7 @@ class Morpher:
         print("\n..minimizing with " + self.method)
         self.msource = self.source.clone()
 
-        self.s_size = avesize(self.source.getPoints())
+        self.s_size = avesize(self.source.points())
         bnds = [(-self.bound, self.bound)] * 18
         x0 = [0.0] * 18  # initial guess
         x0 += [1.0]  # the optional scale
@@ -88,7 +88,8 @@ class Morpher:
             bnds += [(1.0 - self.bound, 1.0 + self.bound)]
         else:
             bnds += [(1.0, 1.0)]  # fix scale to 1
-        res = opt.minimize(self._func, x0, bounds=bnds, method=self.method, tol=self.tolerance)
+        res = opt.minimize(self._func, x0,
+                           bounds=bnds, method=self.method, tol=self.tolerance)
         # recalc for all pts:
         self.subsample = self.source.N()
         self._func(res["x"])
@@ -100,15 +101,23 @@ class Morpher:
 
         pos, sz = self.s_size[0], self.s_size[1]
 
-        sphere0 = Sphere(pos, c="gray", r=sz, alpha=0.8, res=16).wireframe(1)
-        sphere1 = Sphere(pos, c="gray", r=sz, alpha=0.2, res=16)
+        sphere0 = Sphere(pos, c="gray", r=sz, alpha=0.8, res=16).wireframe()
+        sphere1 = sphere0.clone().alpha(0.2).wireframe(False)
 
-        hairsacts = []
-        for i in range(sphere0.N()):
-            p = sphere0.getPoint(i)
+        newpts = []
+        for p in self.msource.points():
             newp = self.transform(p)
-            sphere1.setPoint(i, newp)
-            hairsacts.append(Arrow(p, newp, s=0.3, alpha=0.5))
+            newpts.append(newp)
+        self.msource.points(newpts)
+
+        arrs = []
+        newpts = []
+        for p in sphere0.points():
+            newp = self.transform(p)
+            newpts.append(newp)
+            arrs.append([p, newp])
+        sphere1.points(newpts)
+        hair = Arrows(arrs, s=0.3, alpha=0.5)
 
         zero = Point(pos, c="black")
         x1, x2, y1, y2, z1, z2 = self.target.polydata().GetBounds()
@@ -117,7 +126,7 @@ class Morpher:
         text2 = Text("morphed vs target", tpos, s=sz / 10, c="dg")
         text3 = Text("deformation", tpos, s=sz / 10, c="dr")
 
-        vp.show(sphere0, sphere1, zero, text3, hairsacts, at=2)
+        vp.show(sphere0, sphere1, zero, text3, hair, at=2)
         vp.show(self.msource, self.target, text2, at=1)
         vp.show(self.source, self.target, text1, at=0, zoom=1.2, interactive=1)
 
@@ -135,5 +144,6 @@ if __name__ == "__main__":
     mr.morph()
 
     print("Result of parameter fit:\n", mr.params)
+
     # now mr.msource contains the modified/morphed source.
     mr.draw_shapes()

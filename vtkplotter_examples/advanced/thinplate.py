@@ -12,25 +12,24 @@ np.random.seed(1)
 
 vp = Plotter(axes=1)
 
-act = vp.load(datadir+"shuttle.obj", c='silver')
+mesh = vp.load(datadir+"shuttle.obj", c='silver')
 
 # pick 4 random points
-indxs = np.random.randint(0, act.N(), 4)
+indxs = np.random.randint(0, mesh.N(), 4)
+pts = mesh.points()[indxs]
 
 # and move them randomly by a little
 ptsource, pttarget = [], []
-for i in indxs:
-    ptold = act.getPoint(i)
+for ptold in pts:
     ptnew = ptold + np.random.rand(3) * 0.2
-    act.setPoint(i, ptnew)
     ptsource.append(ptold)
     pttarget.append(ptnew)
     # print(ptold,'->',ptnew)
 
-warped = thinPlateSpline(act, ptsource, pttarget)
+warped = thinPlateSpline(mesh, ptsource, pttarget)
 warped.alpha(0.4).color("b")
 # print(warped.info['transform']) # saved here.
 
 apts = Points(ptsource, r=15, c="r")
 
-vp.show(act, warped, apts, Text(__doc__), viewup="z")
+vp.show(mesh, warped, apts, Text(__doc__), viewup="z")

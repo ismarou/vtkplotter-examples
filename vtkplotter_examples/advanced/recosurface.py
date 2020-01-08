@@ -6,9 +6,9 @@ to reconstruct a surface from points.
     noise is added to its vertices.
  2. the point cloud is smoothened with MLS
     (see moving_least_squares.py)
- 3. clean(actor) imposes a minimum distance
+ 3. mesh.clean() imposes a minimum distance
     among mesh points where 'tol' is the
-    fraction of the actor size.
+    fraction of the mesh size.
  4. a triangular mesh is extracted from
     this set of sparse Points, 'bins' is the
     number of voxels of the subdivision
@@ -20,15 +20,15 @@ import numpy as np
 
 vp = Plotter(N=4, axes=0, bg='w')
 
-act = vp.load(datadir+"pumpkin.vtk")
-vp.show(act, at=0)
+mesh = vp.load(datadir+"pumpkin.vtk")
+vp.show(mesh, at=0)
 
-noise = np.random.randn(act.N(), 3) * 0.04
+noise = np.random.randn(mesh.N(), 3) * 0.04
 
-pts0 = Points(act.getPoints() + noise, r=3).legend("noisy cloud")
+pts0 = Points(mesh.points() + noise, r=3).legend("noisy cloud")
 vp.show(pts0, at=1)
 
-pts1 = smoothMLS2D(pts0, f=0.4)  # smooth cloud, input actor is modified
+pts1 = smoothMLS2D(pts0, f=0.4)  # smooth cloud, input mesh is modified
 
 print("Nr of points before cleaning polydata:", pts1.N())
 

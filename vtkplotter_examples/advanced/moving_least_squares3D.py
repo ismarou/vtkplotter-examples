@@ -10,15 +10,15 @@ The nr neighbours in the local 4D fitting must be specified.
 """
 from vtkplotter import *
 
-# generate uniform points on sphere (tol separates points by 2% of actor size)
-cc = Sphere(res=200).clean(tol=0.02).getPoints()
+# generate uniform points on sphere (tol separates points by 2% of mesh size)
+cc = Sphere(res=200).clean(tol=0.02).points()
 txt = Text(__doc__, c="k")
 
 a, b, noise = 0.2, 0.4, 0.1  # some random warping parameters, and noise factor
 sets = []
 for i in range(5):  # generate a time sequence of 5 shapes
     cs = cc + a * i * cc ** 2 + b * i * cc ** 3  # warp sphere in weird ways
-    # set absolute time of points actor, and add 1% noise on positions
+    # set absolute time of points, and add 1% noise on positions
     ap = Points(cs, c=i, alpha=0.5).addGaussNoise(1.0).time(0.2 * i)
     sets.append(ap)
 

@@ -32,9 +32,9 @@ vp += Text(__doc__)
 
 shaft = Cylinder([[0, 0, 0], [Lshaft, 0, 0]], r=0.03, c="dg")
 rotor = Cylinder([[Lshaft / 2.2, 0, 0], [Lshaft / 1.8, 0, 0]], r=R).texture("marble")
-base = Sphere([0, 0, 0], c="dg", r=0.03)
-tip = Sphere([Lshaft, 0, 0], c="dg", r=0.03)
-gyro = shaft + rotor + base + tip  # group relevant actors into single one
+base  = Sphere([0, 0, 0], c="dg", r=0.03)
+tip   = Sphere([Lshaft, 0, 0], c="dg", r=0.03)
+gyro = shaft + rotor + base + tip  # group relevant meshes into single one of type Assembly
 vp += gyro  # add it to Plotter list
 
 pedestal = Box([0, -0.63, 0], height=0.1, length=0.1, width=1).texture("wood5")

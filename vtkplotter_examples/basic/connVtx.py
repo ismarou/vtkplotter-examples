@@ -6,11 +6,12 @@ from vtkplotter import *
 
 s = Sphere(c="y", res=12).wireframe()
 
-index = 12
+index = 12 # pick one point
+pt = s.points(index)
 
 vtxs = s.connectedVertices(index, returnIds=False)
 
-apt = Point(s.getPoint(index), c="r", r=15)
+apt  = Point(pt, c="r", r=15)
 cpts = Points(vtxs, c="blue", r=15)
 
 show(s, apt, cpts, Text(__doc__), verbose=False)

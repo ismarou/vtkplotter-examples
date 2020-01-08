@@ -5,7 +5,7 @@ optionally a list of transparencies.
 """
 from vtkplotter import *
 
-################
+################################################
 sc = Torus(res=9).lw(0.1)
 
 cols, alphas = [], []
@@ -14,19 +14,19 @@ for i in range(sc.NCells()):
     alphas.append(i/sc.NCells())
 
 sc.cellColors(cols, alpha=alphas, mode='colors')
-print('all scalars:', sc.scalars())
+print('all mesh arrays:', sc.getArrayNames())
 
 tc = Text(__doc__, c='k')
 
 show(sc, tc, at=0, N=2, bg='w')
 
-################
+################################################
 sv = Torus(res=5).lw(0.1)
 
 cols = [i for i in range(sv.NPoints())]
 
 sv.pointColors(cols, mode='colors')
-print('all scalars:', sv.scalars())
+print('all mesh arrays:', sv.getArrayNames())
 
 tv = Text('''pointColors(mode='colors')
 	tries to interpolate inbetween vertices''', c='k')

@@ -140,6 +140,6 @@ for i in pb.range():
         rsv = [Vel[0][0], Vel[0][1], 0]
         vp += Point(rsp, c="r", r=5, alpha=0.1)  # leave a point trace
         vp.show()  # render scene
-    pb.print("#actors=" + str(len(vp.actors)))
+    pb.print()
 
 vp.show(interactive=1)

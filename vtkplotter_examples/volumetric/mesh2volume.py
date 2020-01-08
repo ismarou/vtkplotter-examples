@@ -9,7 +9,7 @@ doc = Text(__doc__, c="k")
 
 s = load(datadir+"bunny.obj").normalize().wireframe()
 
-v = actor2Volume(s, spacing=(0.02, 0.02, 0.02)).alpha([0,0.5]).c('blue')
+v = mesh2Volume(s, spacing=(0.02, 0.02, 0.02)).alpha([0,0.5]).c('blue')
 
 iso = v.isosurface().color("b")
 

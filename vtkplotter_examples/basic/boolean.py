@@ -1,5 +1,5 @@
 """
-Example of boolean operations with actors or polydata
+Example of boolean operations with Mesh objects
 """
 print(__doc__)
 
@@ -9,7 +9,7 @@ from vtkplotter import Plotter, booleanOperation, Sphere
 # declare the instance of the class
 vp = Plotter(shape=(2, 2), interactive=0, axes=3)
 
-# build to sphere actors
+# build to sphere meshes
 s1 = Sphere(pos=[-0.7, 0, 0], c="r", alpha=0.5)
 s2 = Sphere(pos=[0.7, 0, 0], c="g", alpha=0.5)
 
