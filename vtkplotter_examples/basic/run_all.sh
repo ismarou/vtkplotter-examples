@@ -53,9 +53,6 @@ python clustering.py
 echo Running connVtx.py
 python connVtx.py
 
-echo Running connCells.py
-python connCells.py
-
 echo Running deleteMeshPoints.py
 python deleteMeshPoints.py
 

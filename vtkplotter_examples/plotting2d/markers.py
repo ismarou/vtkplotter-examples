@@ -8,4 +8,4 @@ for i,s in enumerate(symbols):
     Text(s, pos=[i*0.6,-0.6,0], s=0.12, depth=0).color('k')
 Text(__doc__)
 
-show(..., bg='w', size=(1500,300), axes=0, zoom=5)
+show(..., bg='w', size=(1500,300), axes=0, zoom=5, viewup='2d')

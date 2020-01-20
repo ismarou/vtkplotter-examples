@@ -1,12 +1,11 @@
 """Generate a time sequence of 3D shapes
-(from a sphere to a tetrahedron) as noisy cloud Points,
+(from a sphere to a tetrahedron) as noisy point clouds,
 and smooth it with Moving Least Squares (smoothMLS3D).
 This make a simultaneus fit in 4D (space+time).
-smoothMLS3D method returns a vtkActor where points
+smoothMLS3D method returns points that
 are color coded in bins of fitted time.
 Data itself can suggest a meaningful time separation
 based on the spatial distribution of points.
-The nr neighbours in the local 4D fitting must be specified.
 """
 from vtkplotter import *
 
@@ -24,6 +23,7 @@ for i in range(5):  # generate a time sequence of 5 shapes
 
 show(sets, txt, at=0, N=2, bg="w", zoom=1.4)
 
+#The nr neighbours in the local 4D fitting must be specified.
 sm3d = smoothMLS3D(sets, neighbours=10)
 
 #color indicates fitted time

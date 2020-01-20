@@ -16,12 +16,11 @@ pl3d.Update()
 domain = pl3d.GetOutput().GetBlock(0)
 
 ######################## vtkplotter
-comment = Text(__doc__, c='w')
-box = Mesh(domain, c=None, alpha=0.1)
-
 probe= Grid(pos=[9,0,30], normal=[1,0,0], sx=5, sy=5, resx=6, resy=6)
-probe.color('k')
 
 stream = streamLines(domain, probe, direction='backwards')
+
+comment = Text(__doc__, c='w')
+box = Mesh(domain).alpha(0.1)
 
 show(stream, probe, box, comment, axes=8)

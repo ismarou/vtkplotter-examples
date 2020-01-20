@@ -1,9 +1,4 @@
 """
-Example on how to use the intersectWithLine() method:
- intersect a mesh with lines from the origin
- and draw the intersection points in blue
-
-Second part of the example:
  Expand an arbitrary closed shape in spherical harmonics
  using SHTOOLS (https://shtools.oca.eu/shtools/)
  and then truncate the expansion to a specific lmax and

@@ -1,7 +1,7 @@
 """Take 2 clouds of points, source and target, and morph
 source on target using thin plate splines as a model.
-The fitting minimizes the distance to the target surface
-using algorithms available in the scipy.optimize package."""
+The fitting minimizes the distance to the target surface.
+"""
 from vtkplotter import *
 import scipy.optimize as opt
 import numpy as np
@@ -64,13 +64,14 @@ class Morpher:
         maxb = max(x2-x1, y2-y1)
         grid0 = Grid(self.source.centerOfMass(), sx=maxb, sy=maxb, resx=40, resy=40)
         T = self.morphed_source.getTransform()
-        grid1 = grid0.alpha(0.3).clone().transformMesh(T) # warp the grid
+        grid1 = grid0.alpha(0.3).wireframe(0).clone().transformMesh(T) # warp the grid
 
         text1 = Text(__doc__, c="k")
         text2 = Text("morphed vs target\nn.d.f.="+str(self.ndf), c="k")
         arrows = Arrows(self.ptsource, self.pttarget, c='gray', alpha=0.5, s=1)
 
         self.morphed_source.pointSize(10).c('g')
+        settings.interactorStyle = 7 # lock scene to 2D
         show(grid0, self.source, self.target, arrows, text1, at=0, N=2, bg="w", axes=0)
         show(grid1, self.morphed_source, self.target, text2, at=1, zoom=1.2, interactive=1)
 

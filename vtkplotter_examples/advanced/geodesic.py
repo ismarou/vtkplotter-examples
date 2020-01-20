@@ -5,13 +5,13 @@ a shortest path calculation 20 times.
 """
 from vtkplotter import *
 
-s = Sphere(r=1.05, res=200).clean(0.005).wireframe().alpha(0.05)
+s = Sphere(r=1.07, res=200).clean(0.007).wireframe().alpha(0.02)
 
 paths = []
 for i in range(20):
-    paths.append(geodesic(s, 500, i * 700))
+    paths.append(geodesic(s, 2500, i * 700))
     # print(paths[-1].info['CumulativeWeights'])
 
 doc = Text(__doc__, c="w")
 
-show(s, Earth(), doc, paths, viewup="z")
+show(s, Earth(style=4), doc, paths, viewup="z")

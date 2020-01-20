@@ -21,6 +21,9 @@ python probePoints.py
 echo Running probeLine.py
 python probeLine.py
 
+echo Running probeLine2.py
+python probeLine2.py
+
 echo Running probePlane.py
 python probePlane.py
 

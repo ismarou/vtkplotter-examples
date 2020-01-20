@@ -1,5 +1,4 @@
-"""Lock an object orientation to the scene camera.
-"""
+"""Lock an object orientation to the scene camera."""
 from vtkplotter import Sphere, Text, Plotter
 
 plt = Plotter(axes=1, interactive=0)

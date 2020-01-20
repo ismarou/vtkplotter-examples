@@ -1,5 +1,5 @@
 """
-Load a Volume (atif stack).
+Load a Volume (tif stack).
 Invoke a tool to cut off parts of it.
 """
 print(__doc__)

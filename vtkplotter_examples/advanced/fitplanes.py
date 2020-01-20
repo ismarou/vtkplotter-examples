@@ -1,11 +1,8 @@
-"""
-In this example we fit a plane to regions of a surface defined by
+"""Fit a plane to regions of a surface defined by
 N points that are closest to a given point of the surface.
 For some of these point we show the fitting plane.
 Black points are the N points used for fitting.
 Green histogram is the distribution of residuals from the fitting.
-Both plane center and normal can be accessed from the
-attribute plane.info['center'] and plane.info['normal'].
 """
 from vtkplotter import *
 

@@ -1,5 +1,5 @@
-"""
-Manually build a mesh.
+"""Manually build a mesh
+from points and faces
 """
 from vtkplotter import *
 

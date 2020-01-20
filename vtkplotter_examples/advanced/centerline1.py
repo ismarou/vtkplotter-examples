@@ -22,6 +22,6 @@ for i in range(niter):
 t.clean(tol)
 
 # spline the resulting set of points
-spl = Spline(t.points(), smooth=smooth)
+spl = Spline(t, smooth=smooth)
 
 show(tube, t, spl, Text(__doc__), axes=1, newPlotter=True)

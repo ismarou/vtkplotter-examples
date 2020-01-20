@@ -13,7 +13,7 @@ plt1 = plotxy(
     [x, y],       # accepts different formats
     yscale=3,     # set an optional y-scaling factor
     xlimits=(-1, 11),
-    splined=False,
+    line=True,    # join points with a line
     lc="r",       # line color
     marker="*",   # marker style
     mc="dr",      # marker color

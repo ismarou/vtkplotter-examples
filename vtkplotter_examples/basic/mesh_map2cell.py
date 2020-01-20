@@ -6,17 +6,16 @@ from vtkplotter import *
 
 mesh1 = load(datadir+'icosahedron.vtk')
 
-doc = Text(__doc__, pos=8, c="w")
-
 # let the scalar be the z coordinate of the mesh vertices
 scals = mesh1.points()[:, 2]
 
-mesh1.lineWidth(0.1).addPointScalars(scals, name='scals')
-msg1 = Text("Scalar originally defined on points..", pos=5, c="w")
-printInfo(mesh1)
-show(mesh1, msg1, doc, at=0, N=2, axes=1, viewup="z")
+doc = Text(__doc__, pos=8, c="w")
 
-mesh2 = mesh1.clone().addScalarBar(c='w').mapPointsToCells()
+msg1 = Text("Scalar originally defined on points..", pos=5, c="w")
+mesh1.lineWidth(0.1).addPointScalars(scals, name='scals').printInfo()
+
 msg2 = Text("..is interpolated to cells.", pos=5, c="w")
-printInfo(mesh2)
-show(mesh2, msg2, at=1, interactive=True)
+mesh2 = mesh1.clone().addScalarBar(c='w').mapPointsToCells().printInfo()
+
+show(mesh1, msg1, doc, at=0, N=2, axes=1, viewup="z")
+show(mesh2, msg2,      at=1, interactive=True)

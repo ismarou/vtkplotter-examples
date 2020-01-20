@@ -1,14 +1,15 @@
 """
-Draw the isolines of the
-active scalars on a surface
+Draw the isolines of a
+scalar field on a surface
 """
 from vtkplotter import *
 
-mesh = Hyperboloid().rotateX(20) # a whatever mesh
+mesh = ParametricShape('RandomHills') # a whatever mesh
 
-scals = mesh.points()[:,1] # pick x coords of vertices
-mesh.pointColors(scals).addScalarBar(c='w')
+pts = mesh.points() 
+# use z coords of vertices as scalars:
+mesh.pointColors(pts[:,2], cmap='terrain').addScalarBar()
 
-isols = mesh.isolines(n=12, vmin=0).color('w')
+isols = mesh.isolines(n=10, vmin=-0.1).color('w')
 
-show(mesh, isols, Text(__doc__), axes=1)
+show(mesh, isols, Text(__doc__), axes=1, viewup='z')

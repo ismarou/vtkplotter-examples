@@ -22,7 +22,7 @@ class MyExpression(UserExpression):
 f0 = MyExpression(u1, u2, degree=1)
 
 plot( interpolate(f0,V),
-      warpYfactor=0.5, # y-scaling of the solution
+      warpYfactor=0.5, # y-scaling factor to solution
       lc='navy',       # line color and width
       lw=3,
       xtitle="time [sec]",
@@ -35,7 +35,8 @@ plot( interpolate(f0,V),
             'yHighlightZero':True,
            },
       scalarbar=False,
-      zoom=1.2,
+      viewup='2D',     # lock 2D view, press r to reset
+      zoom=1.25,
     )
 
-#screenshot() # uncomment to take a screenshot
+#screenshot('pic.png') # uncomment to take a screenshot

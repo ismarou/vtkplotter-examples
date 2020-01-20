@@ -1,9 +1,6 @@
-"""
-Example that shows how to draw very large number of
+"""Example that shows how to draw very large number of
 spheres (same for Points, lines) with different colors
-or different radius. Resolution (res) can be specified.
-"""
-# (vtk versions<8.0 might be slow)
+or different radius."""
 from vtkplotter import show, Spheres, Text
 from random import gauss
 

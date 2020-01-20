@@ -58,4 +58,4 @@ print("used mem, Npts=", 3 * X.nbytes // 1024 ** 2, "MB", X.shape[0])
 
 from vtkplotter import Points
 
-Points([X, Y, Z], c="tomato").show(axes=1, bg='white', zoom=2.0)
+Points([X, Y, Z], c="tomato").show(axes=1, bg='white')

@@ -21,5 +21,6 @@ plt = plot(f,
            lw=0,
            scalarbar='horizontal',
            xtitle = 'y-coord is scaled by factor 100',
+           axes={'xTitleOffset':0.2},
            text=__doc__,
            )

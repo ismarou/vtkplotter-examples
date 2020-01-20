@@ -19,5 +19,5 @@ show(tx,
      tx.box().c("y"),
      t0,
      ax,
-     axes=8, bg="lb", size=(500,500)
+     axes=1, bg="lb", size=(600,600)
      )

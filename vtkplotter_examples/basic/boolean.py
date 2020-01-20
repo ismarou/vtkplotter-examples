@@ -2,7 +2,6 @@
 Example of boolean operations with Mesh objects
 """
 print(__doc__)
-
 from vtkplotter import Plotter, booleanOperation, Sphere
 
 

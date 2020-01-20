@@ -6,8 +6,8 @@ from vtkplotter import Picture, Text, datadir, show
 
 fname = datadir+'images/tropical.jpg'
 arr = imread(fname)
-print('loaded',fname, '\ntype is:',type(arr), arr.shape)
 
-pic = Picture(arr) # Create Picture from numpy array
+pic = Picture(arr) # create Picture object from numpy array
 
-show(pic, Text(__doc__))
+# (press r to reset):
+show(pic, Text(__doc__), axes=8, viewup='2d')

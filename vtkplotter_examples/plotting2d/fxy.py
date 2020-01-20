@@ -4,7 +4,7 @@ as a string or as a reference to an external existing function.
 Red points indicate where the function does not exist.
 """
 print(__doc__)
-from vtkplotter import fxy, sin, cos, show
+from vtkplotter import *
 
 
 def my_z(x, y):

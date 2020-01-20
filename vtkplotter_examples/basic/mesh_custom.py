@@ -1,14 +1,10 @@
-"""
-Example on how to specify a color for each
+"""Example on how to specify a color for each
 individual cell or point of a Mesh.
-useDepthPeeling may improve the rendering of transparent objects.
 """
 from vtkplotter import *
 
+#useDepthPeeling may improve the rendering of transparent objects.
 settings.useDepthPeeling = True
-
-doc = Text(__doc__, pos=1, c="w")
-
 
 man = load(datadir+"man.vtk")
 
@@ -31,4 +27,4 @@ alphas = [i/10. for i in range(10)]
 man.pointColors(scals, cmap=mymap, alpha=alphas)
 man.addScalarBar(c='white')
 
-show(man, doc, viewup="z", axes=8)
+show(man, Text(__doc__), viewup="z", axes=8)

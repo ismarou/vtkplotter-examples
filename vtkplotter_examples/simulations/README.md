@@ -13,7 +13,7 @@ python example.py  # on mac OSX try 'pythonw' instead
 |    |    |
 | [![brownian2d](https://user-images.githubusercontent.com/32848391/50738948-73ce8300-11d9-11e9-8ef6-fc4f64c4a9ce.gif)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/simulations/brownian2D.py)<br/> `brownian2D.py` | Simulation of the Brownian motion of a large red particle in a swarm of small particles. <br/>The spheres collide elastically with themselves and with the walls of the box.|
 |    |    |
-| [![cell_main](https://user-images.githubusercontent.com/32848391/50738950-73ce8300-11d9-11e9-9d9d-960a032e0aae.gif)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/simulations/cell_main.py)<br/> `cell_main.py`    |  Simulation of three bacteria types that divide at a specified rate. As they divide they occupy more and more space. |
+| [![cell_colony](https://user-images.githubusercontent.com/32848391/50738950-73ce8300-11d9-11e9-9d9d-960a032e0aae.gif)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/simulations/cell_colony.py)<br/> `cell_clony.py`    |  Simulation of three bacteria types that divide at a specified rate. As they divide they occupy more and more space. |
 |    |    |
 | [![doubleslit](https://user-images.githubusercontent.com/32848391/50738946-7335ec80-11d9-11e9-93db-f34f853ed759.jpg)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/simulations/doubleslit.py)<br/> `doubleslit.py` | Simulation of the classic _double slit experiment_. <br/>Any number of slits of any geometry can be described. Slit sources are placed on the plane shown as a thin grid. <br/>Can simulate the [_Arago spot_](https://en.wikipedia.org/wiki/Arago_spot), the bright point at the center of a circular object shadow.|
 |    |    |
@@ -42,6 +42,3 @@ python example.py  # on mac OSX try 'pythonw' instead
 | [![wave](https://user-images.githubusercontent.com/32848391/50738956-7e891800-11d9-11e9-92d7-fa109b1b8551.gif)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/simulations/wave_equation.py)<br/> `wave_equation.py` | Simulate a collection of discrete coupled oscillators. We use this as a model of a vibrating string and compare two methods of integration: Euler and Runge-Kutta4.|
 |    |    |
 | [![pianoplayer](https://user-images.githubusercontent.com/32848391/44957809-b2c09500-aed6-11e8-9dc5-c2e52b632f94.gif)](https://github.com/marcomusy/pianoplayer)                                                                              | Finding and animating the optimal fingering to play a piano score with<br />[`pianoplayer 2.0`](https://github.com/marcomusy/pianoplayer)|
-
-
-

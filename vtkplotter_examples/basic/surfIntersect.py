@@ -5,10 +5,10 @@ from vtkplotter import *
 
 car = load(datadir+"porsche.ply").alpha(0.2)
 
-s = Tube([(-9.,0.,0.), (0.,1.,0.), (9.,0.,0.)])
-s.triangle().clean().color("violet").alpha(0.2)
+cline = [(-9.,0.,0.), (0.,1.,0.), (9.,0.,0.)]
+t = Tube(cline).triangle().color("violet").alpha(0.2)
 
-contour = surfaceIntersection(car, s)
+contour = surfaceIntersection(car, t)
 contour.lw(4).printInfo()
 
-show(s, car, contour, Text(__doc__), bg='w')
+show(car, t, contour, Text(__doc__), bg='white')

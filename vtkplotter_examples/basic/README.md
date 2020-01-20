@@ -3,7 +3,7 @@ In this directory you will find a set of examples to perform simple operations.
 ```bash
 git clone https://github.com/marcomusy/vtkplotter-examples.git
 cd vtkplotter/examples/basic
-python example.py 
+python example.py
 ```
 (_click thumbnail image to get to the python script_)
 
@@ -53,7 +53,7 @@ python example.py
 |    |    |
 | [![mesh_map2cell](https://user-images.githubusercontent.com/32848391/56600859-0153a880-65fa-11e9-88be-34fd96b18e9a.png)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/basic/mesh_map2cell.py)<br/> `mesh_map2cell.py`    | Map a scalar which is defined on the vertices to the mesh cells. |
 |    |    |
-| [![isolines](https://user-images.githubusercontent.com/32848391/56752570-de0b3380-6788-11e9-8679-6697c6fa7e5a.png)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/basic/isolines.py)<br/> `isolines.py`    | Generate isolines for the current active scalars of a surface. |
+| [![isolines](https://user-images.githubusercontent.com/32848391/72433087-f00a8780-3798-11ea-9778-991f0abeca70.png)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/basic/isolines.py)<br/> `isolines.py`    | Generate isolines for the current active scalars of a surface. |
 |    |    |
 | [![mesh_threshold](https://user-images.githubusercontent.com/32848391/51807663-4762cf80-228a-11e9-9d0c-184bb11a97bf.png)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/basic/mesh_threshold.py)<br/> `mesh_threshold.py` | Extracts the cells where scalar value satisfies a threshold criterion. |
 |    |    |
@@ -86,10 +86,3 @@ python example.py
 | [![trail](https://user-images.githubusercontent.com/32848391/50738846-be033480-11d8-11e9-99b7-c4ceb90ae482.jpg)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/basic/trail.py)<br/> `trail.py`                            | Add a trailing line to a moving actor. |
 |    |    |
 | [![tube](https://user-images.githubusercontent.com/32848391/52522720-5170cf00-2c89-11e9-8b1d-a7a5cf75e71b.png)](https://github.com/marcomusy/vtkplotter-examples/blob/master/vtkplotter_examples/basic/tube.py)<br/> `tube.py`                               | Scalar arrays can be specified to vary radius and color of a line represented as a tube. |
-
-
-
-
-
-
-

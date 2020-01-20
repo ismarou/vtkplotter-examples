@@ -1,5 +1,4 @@
-"""Probe a vtkUnStructuredGrid with a plane
-"""
+"""Probe a vtkUnStructuredGrid with a plane"""
 from vtkplotter import *
 
 # same could be done with vtkRectilinearGrid etc..

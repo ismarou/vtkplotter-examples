@@ -1,9 +1,7 @@
-"""
-Extract the mesh region that
+"""Extract the mesh region that
 has the largest connected surface
 """
 from vtkplotter import *
-
 
 mesh1 = load(datadir+"embryo.slc", threshold=True, c="y")
 printc("area1 =", mesh1.area(), c="y")

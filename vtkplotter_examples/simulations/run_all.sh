@@ -15,8 +15,8 @@ echo
 echo Running aspring.py
 python aspring.py
 
-echo Running cell_main.py
-python cell_main.py
+echo Running cell_colony.py
+python cell_colony.py
 
 echo Running brownian2D.py
 python brownian2D.py

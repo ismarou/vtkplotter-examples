@@ -1,36 +1,34 @@
+"""Use scipy to interpolate the value of a scalar known on a set
+of points on a new set of points where the scalar is not defined.
+
+Two interpolation methods are possible:
+Radial Basis Function (used here), and Nearest Point.
 """
-Use scipy to interpolate the value of a scalar known on a set of points
-on a new set of points where the scalar is not defined.
-Two interpolation methods are possible: Radial Basis Function, Nearest Point.
-"""
-from scipy.interpolate import Rbf, NearestNDInterpolator as Near
 import numpy as np
+from vtkplotter import *
+from scipy.interpolate import Rbf, NearestNDInterpolator as Near
 
-# np.random.seed(0)
+mesh = load(datadir+"bunny.obj").normalize()
+pts = mesh.points()
 
+# pick a subset of 100 points where a scalar descriptor is known
+ptsubset = pts[:100]
 
-# a small set of points for which the scalar is given
-x, y, z = np.random.rand(3, 20)
+# assume the descriptor value is some function of the point coord y
+x, y, z = np.split(ptsubset, 3, axis=1)
+desc = 3*sin(4*y)
 
-scals = z  # scalar value is just z component
+# build the interpolator to determine the scalar value
+#  for the rest of mesh vertices:
+itr = Rbf(x, y, z, desc)          # Radial Basis Function interpolator
+#itr = Near(ptsubset, desc)       # Nearest-neighbour interpolator
 
-# build the interpolator
-itr = Rbf(x, y, z, scals)  # Radial Basis Function interpolator
-# itr = Near(list(zip(x,y,z)), scals) # Nearest-neighbour interpolator
+# interpolate desciptor on the full set of mesh vertices
+xi, yi, zi = np.split(pts, 3, axis=1)
+interpolated_desc = itr(xi, yi, zi)
 
-# generate a new set of points
-t = np.linspace(0, 7, 100)
-xi, yi, zi = [np.sin(t) / 10 + 0.5, np.cos(t) / 5 + 0.5, (t - 1) / 5]  # an helix
+mesh.pointColors(interpolated_desc, cmap='rainbow')
+mesh.addScalarBar(title='3*sin(4*y)')
+rpts = Points(ptsubset, r=8, c='white')
 
-# interpolate scalar values on the new set
-scalsi = itr(xi, yi, zi)
-
-
-from vtkplotter import Plotter, Points, Text
-
-vp = Plotter(axes=1, bg="w")
-vp += Points([x, y, z], r=10, alpha=0.5).pointColors(scals)
-vp += Points([xi, yi, zi]).pointColors(scalsi)
-vp += Text(__doc__, pos=1, c="dr")
-
-vp.show(viewup="z")
+show(mesh, rpts, Text(__doc__), axes=1, bg="w")

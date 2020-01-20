@@ -6,20 +6,22 @@ print(__doc__)
 from vtkplotter import Plotter, sin, Sphere, Point
 
 
-vp = Plotter(axes=6, bg='white', interactive=0)
+vp = Plotter(axes=6, bg='white', interactive=False)
 
 s = Sphere().c("green").bc("tomato")
-s.cutWithPlane([-0.9, 0, 0], showcut=True)  # cut left part of sphere
+s.cutWithPlane([-0.9, 0, 0])  # cut left part of sphere
 
-p = Point([1, 1, 1], r=12, c="k")
+p = Point([1,1,1], r=12, c="black")
 
-# add a trail to point p with maximum length 0.5 and 50 segments
-p.addTrail(c="k", lw=3, maxlength=0.5, n=50)
+# add a trail to point p with max length 0.5 and 50 segments
+p.addTrail(lw=3, maxlength=0.5, n=50)
+
+# add meshes to Plotter list
 vp += [s, p]
 
 for i in range(200):
-    p.pos([-2 + i / 100.0, sin(i / 5.0) / 15, 0])
-    vp.show()
+    p.pos(-2+i/100.0, sin(i/5.0)/15, 0)
     vp.camera.Azimuth(-0.2)
+    vp.show()
 
-vp.show(interactive=1)
+vp.show(interactive=True)

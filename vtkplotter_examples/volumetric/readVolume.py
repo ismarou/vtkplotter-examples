@@ -1,5 +1,5 @@
 """
-Work with vtkVolume objects and surface meshes
+Work with Volume and Mesh objects
 in the same rendering window.
 """
 from vtkplotter import *

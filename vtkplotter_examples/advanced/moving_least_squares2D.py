@@ -1,5 +1,5 @@
 """Use a variant of the Moving Least Squares (MLS)
- algorithm to project a cloud of points to become a smooth surface.
+algorithm to project a cloud of points to become a smooth surface.
 In the second window we show the error estimated for
 each point in color scale (left) or in size scale (right).
 """

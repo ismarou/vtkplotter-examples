@@ -1,31 +1,22 @@
+"""Read volumetric data from file
+with or without automatic isosurfacing
 """
-Example to read volumetric data in the form of a tiff stack
-or SLC (StereoLithography Contour) from files
-with or without automatic isosurfacing:
+from vtkplotter import *
 
-A tiff stack is a set of image slices in z. The scalar value
-(intensity of white) is used to create an isosurface by fixing a threshold.
-If threshold=None this is set to 1/3 of the scalar range.
-
-- If the spacing of the tiff stack is uneven in xyz, this can be
-fixed by setting scaling factors with scaling=[xfac,yfac,zfac]
-"""
-print(__doc__)
-from vtkplotter import show, load, datadir
+comment = Text(__doc__)
 
 # Read volume data from a tif file:
 f = datadir+"embryo.tif"
+vol1  = load(f) # load it as Volume
+mesh1 = load(f, threshold=80) # isosurfacing happens on the fly
+plotter1 = show([(vol1, comment), mesh1], N=2, axes=8, viewup='z')
 
-v = load(f) # Volume
-a = load(f, threshold=80) # isosurfacing on the fly
-vp1 = show(v, a, shape=(1, 2), axes=8, viewup='z')
-
-# Can also read SLC files
-vol = load(datadir+"embryo.slc") # Volume
-vol.color(['lb','db','dg','dr']) # color transfer values along range
-vol.alpha([0.0, 0.0, 0.2, 0.6, 0.8, 1]) # opacity values along range
+# on a new window
+vol2 = load(datadir+"embryo.slc") # Volume
+vol2.color(['lb','db','dg','dr']) # color transfer values along range
+vol2.alpha([0.0, 0.0, 0.2, 0.6, 0.8, 1]) # opacity values along range
 
 # newPlotter triggers the instantiation of a new Plotter object
-vp2 = show(vol, pos=(300, 300), bg='white',
-           viewup='z', zoom=1.5,
-           newPlotter=True)
+plotter2 = show(vol2, pos=(300, 300), bg='white',
+                viewup='z', zoom=1.5,
+                newPlotter=True)
