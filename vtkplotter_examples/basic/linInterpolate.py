@@ -16,4 +16,4 @@ for x in range(0,10):
         Arrow(p, p+v, s=0.001)
 
 Text(__doc__)
-show(..., axes=1, bg='w')
+show(..., axes=1)

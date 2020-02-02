@@ -24,4 +24,4 @@ arrows = Arrows(coords-vects, coords+vects, c='jet_r') # use colormap
 box    = domain.box().c('k') # build a box frame of the domain
 comment= Text(__doc__)
 
-show(stream, arrows, box, probe, comment, axes=5, bg='white')
+show(stream, arrows, box, probe, comment, axes=5)

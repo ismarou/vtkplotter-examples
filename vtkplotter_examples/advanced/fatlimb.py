@@ -5,7 +5,7 @@ radius of a sphere centered at the center of mass.
 from vtkplotter import *
 
 
-vp = Plotter(bg="w")
+vp = Plotter()
 
 s = vp.load(datadir+"290.vtk").subdivide()
 s.c("red").bc("lightblue")

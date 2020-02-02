@@ -6,7 +6,7 @@ print(__doc__)
 
 from vtkplotter import Plotter, datadir
 
-vp = Plotter(axes=4)
+vp = Plotter()
 
 vol = vp.load(datadir+"embryo.tif")
 

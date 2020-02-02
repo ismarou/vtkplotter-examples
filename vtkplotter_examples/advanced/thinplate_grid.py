@@ -25,11 +25,10 @@ for pt in pts:
     ptnew = ptold + [0, 0, np.random.randn(1) * 0.10]  # move in z
     pttarget.append(ptnew)
 
-warped = thinPlateSpline(mesh, ptsource, pttarget)
+warped = mesh.thinPlateSpline(ptsource, pttarget)
 warped.alpha(0.2).color("b")
-# print(warped.getTransform())
 
 apts = Points(ptsource, r=5, c="r")
 arrs = Arrows(ptsource, pttarget)
 
-show(warped, apts, arrs, Text(__doc__), axes=9, viewup="z", bg="w")
+show(warped, apts, arrs, Text(__doc__), axes=9, viewup="z")

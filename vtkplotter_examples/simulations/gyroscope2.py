@@ -27,7 +27,7 @@ x = vector(theta, phi, psi)  # Lagrangian coordinates
 v = vector(thetadot, phidot, psidot)
 
 # ############################################################ the scene
-vp = Plotter(axes=0, interactive=0, bg="w")
+vp = Plotter(axes=0, interactive=0)
 vp += Text(__doc__)
 
 shaft = Cylinder([[0, 0, 0], [Lshaft, 0, 0]], r=0.03, c="dg")

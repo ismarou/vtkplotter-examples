@@ -8,7 +8,7 @@ Fitted radius can be accessed from mesh.info['radius'].
 from __future__ import division, print_function
 from vtkplotter import *
 
-vp = Plotter(verbose=0, axes=0, bg='white')
+vp = Plotter(verbose=0, axes=0)
 
 # load mesh and increase by a lot (N=2) the nr of surface vertices
 s = vp.load(datadir+"cow.vtk").alpha(0.3).subdivide(N=2)

@@ -23,4 +23,4 @@ probe = Line([9,0,28], [11,0,33], res=11).color('k')
 
 stream = streamLines(domain, probe, direction='backwards', ribbons=2)
 
-show(box, probe, stream, msg, axes=8)
+show(box, probe, stream, msg, axes=8, bg='bb')

@@ -32,4 +32,4 @@ print('voxels min, max =', np.min(voxels), np.max(voxels))
 vol = Volume(voxels)
 lego = vol.legosurface(-0.1, 1.1, cmap='afmhot_r')
 
-show(vol, lego, N=2, bg='w')
+show(vol, lego, N=2)

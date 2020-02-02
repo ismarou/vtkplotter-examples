@@ -12,7 +12,7 @@ sorted_colors = sorted(colors.items(), key=itemgetter(1))
 # sorted_colors = sorted(colors.items(), key=itemgetter(0))
 
 
-vp = Plotter(N=len(sorted_colors), axes=0, size="fullscreen", bg='w')
+vp = Plotter(N=len(sorted_colors), axes=0, size="fullscreen")
 
 for i, sc in enumerate(sorted_colors):
     cname = sc[0]

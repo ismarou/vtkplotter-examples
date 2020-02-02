@@ -6,7 +6,7 @@ from vtkplotter import Plotter, pcaEllipsoid, Points, Text
 import numpy as np
 
 
-vp = Plotter(axes=1, bg='w')
+vp = Plotter(axes=1)
 
 pts = np.random.randn(500, 3)*[3,2,1]  # random gaussian point cloud
 

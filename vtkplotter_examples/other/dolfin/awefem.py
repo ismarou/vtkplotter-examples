@@ -78,7 +78,6 @@ def awefem(mesh, t, source_loc=None):
                  vmin=0,         # sets a minimum to the color scale
                  vmax=0.003,
                  cmap='rainbow', # the color map style
-                 bg='white',     # background color
                  alpha=1,        # transparency of the mesh
                  lw=0.1,         # linewidth of mesh
                  scalarbar=None,

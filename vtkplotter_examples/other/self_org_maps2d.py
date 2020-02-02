@@ -53,7 +53,7 @@ class SOM:
                 for i in range(n):
                     for j in range(n):
                         grdpts[i*n+j] = (x[i,j], y[i,j], z[i,j])
-                show(doc, pts, grd, axes=6, bg='w', azimuth=2, interactive=False)
+                show(doc, pts, grd, axes=6, azimuth=2, interactive=False)
 
         interactive()
         return [self.codebook[:,i].reshape(n,n) for i in range(3)]

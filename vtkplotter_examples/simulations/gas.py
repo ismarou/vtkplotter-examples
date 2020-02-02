@@ -29,7 +29,7 @@ def reflection(p, pos):
     return np.dot(np.identity(3) - 2 * n * n[:, np.newaxis], p)
 
 
-vp = Plotter(title="gas in toroid", interactive=0, axes=0, bg="w")
+vp = Plotter(title="gas in toroid", interactive=0, axes=0)
 
 vp += Text(__doc__)
 vp += Torus(c="g", r=RingRadius, thickness=RingThickness, alpha=0.1).wireframe(1)  ### <--

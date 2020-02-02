@@ -7,7 +7,7 @@ from random import uniform as u
 
 from vtkplotter import Plotter, alignProcrustes, Text, Points
 
-vp = Plotter(shape=[1, 2], verbose=0, axes=2, sharecam=0, bg="w")
+vp = Plotter(shape=[1, 2], verbose=0, axes=2, sharecam=0)
 
 N = 15  # number of points
 x = 1.0  # add some randomness

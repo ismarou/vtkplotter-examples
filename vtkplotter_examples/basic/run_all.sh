@@ -8,9 +8,6 @@ echo    Press Esc at anytime to skip example
 echo #############################################
 echo
 
-echo Running a_first_example.py
-python  a_first_example.py
-
 echo Running noname.py
 python  noname.py
 
@@ -29,11 +26,11 @@ python align3.py
 echo Running bgImage.py
 python bgImage.py
 
+echo Running boundary.py
+python boundary.py
+
 echo Running boolean.py
 python boolean.py
-
-echo Running carcrash.py
-python carcrash.py
 
 echo Running colormaps.py
 python colormaps.py
@@ -71,8 +68,6 @@ python keypress.py
 echo Running mouseclick.py
 python mouseclick.py
 
-echo Running kspline.py
-python kspline.py
 
 echo Running linInterpolate.py
 python linInterpolate.py
@@ -128,8 +123,8 @@ python isolines.py
 echo Running pca.py
 python pca.py
 
-echo Running silhouette.py
-python silhouette.py
+echo Running silhouette1.py
+python silhouette1.py
 
 echo Running silhouette2.py
 python silhouette2.py

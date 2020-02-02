@@ -23,4 +23,4 @@ stream = streamLines(domain, probe, direction='backwards')
 comment = Text(__doc__, c='w')
 box = Mesh(domain).alpha(0.1)
 
-show(stream, probe, box, comment, axes=8)
+show(stream, probe, box, comment, axes=8, bg='bb')

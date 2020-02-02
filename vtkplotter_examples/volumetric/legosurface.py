@@ -18,4 +18,4 @@ lego.addScalarBar(vmin=40, horizontal=1, c='k')
 
 comment = Text(__doc__, c='k')
 
-show(lego, comment, bg='w', axes=1, viewup='z')
+show(lego, comment, axes=1, viewup='z')

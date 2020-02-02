@@ -84,7 +84,6 @@ while t < 3:
         lw=0, # no mesh edge lines
         warpZfactor=0.1,
         isolines={"n": 12, "lw":1, "c":'black', "alpha":0.1},
-        bg='white',
         scalarbar=False,
         interactive=False,
     )

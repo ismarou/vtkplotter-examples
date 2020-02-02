@@ -16,7 +16,7 @@ tube = Tube(ln, r=rads, res=24, c=None, alpha=0.2)
 t = tube
 for i in range(niter):
     t = smoothMLS1D(t, f=f).c('white').pointSize(5)
-    show(t, at=i, N=niter)
+    show(t, at=i, N=niter, bg='bb')
 
 # reduce nr of points by imposing a min distance
 t.clean(tol)
@@ -24,4 +24,4 @@ t.clean(tol)
 # spline the resulting set of points
 spl = Spline(t, smooth=smooth)
 
-show(tube, t, spl, Text(__doc__), axes=1, newPlotter=True)
+show(tube, t, spl, Text(__doc__), axes=1, bg='bb', newPlotter=True)

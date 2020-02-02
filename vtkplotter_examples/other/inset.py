@@ -4,7 +4,7 @@ Renderer meshes into insets.
 """
 from vtkplotter import *
 
-vp = Plotter(axes=1, bg="white")
+vp = Plotter(axes=1)
 
 e = load(datadir+"embryo.tif", threshold=True) # automatic isosurfacing
 e.normalize().c("gold")

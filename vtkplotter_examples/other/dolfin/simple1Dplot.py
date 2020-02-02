@@ -27,7 +27,6 @@ plot( interpolate(f0,V),
       lw=3,
       xtitle="time [sec]",
       ytitle="velocity [a.u.]",
-      bg='white',      # background color
       axes={'xyGrid':True,
             'xyPlaneColor':'blue',
             'xyGridColor':'peru',

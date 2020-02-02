@@ -1,6 +1,6 @@
 """Use a scalar to paint colored bands on a mesh,
-this can be combined with opacities values for each vertex of the mesh.
-"""
+this can be combined with opacities values for
+each vertex of the mesh."""
 from vtkplotter import *
 from numpy import linspace
 
@@ -19,4 +19,4 @@ scalars = tor.points()[:, 2]  # let z-coord be the scalar
 transp = linspace(1, 0.5, len(scalars))  # set transparencies from 1 -> .5
 tor.pointColors(scalars, alpha=transp, bands=3, cmap="winter")
 
-show(hyp, tor, doc, viewup="z", axes=2)
+show(hyp, tor, doc, axes=2, bg='bb', viewup="z")

@@ -9,4 +9,4 @@ data_matrix[55:74, 55:74, 55:74] = 3
 from vtkplotter import Volume
 
 vol = Volume(data_matrix, c=['white','b','g','r'])
-vol.show(bg="white", axes=1)
+vol.show(axes=1)

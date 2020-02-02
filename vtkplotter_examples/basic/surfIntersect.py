@@ -11,4 +11,4 @@ t = Tube(cline).triangle().color("violet").alpha(0.2)
 contour = surfaceIntersection(car, t)
 contour.lw(4).printInfo()
 
-show(car, t, contour, Text(__doc__), bg='white')
+show(car, t, contour, Text(__doc__))

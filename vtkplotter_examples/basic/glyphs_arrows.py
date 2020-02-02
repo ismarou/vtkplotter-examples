@@ -24,4 +24,4 @@ t1 = Text('Color arrows by size\nusing a color map')
 t2 = Text('Color arrows by an array\nand scale them')
 
 # draw 2 groups of objects on two renderers
-show([[s1, s2, a1, t1], [s1, s2, a2, t2]], N=2)
+show([[s1, s2, a1, t1], [s1, s2, a2, t2]], N=2, bg='bb')

@@ -31,7 +31,7 @@ ms[2].addScalarBar3D(pos=(1.0, 4.6, -0.5), c="k",
     titleXOffset=-2,           # offset of labels
     titleSize=1.5).rotateX(90) # make it vertical
 
-show(ms, Text(__doc__), bg="white", axes=1, viewup='z')
+show(ms, Text(__doc__), axes=1, viewup='z')
 
 # can save colors to vtk or ply format:
 #ms[1].write('lamp.ply', binary=False)

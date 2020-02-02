@@ -6,7 +6,7 @@ within the same renderer.
 from vtkplotter import *
 
 
-vp = Plotter(axes=5, bg="white")
+vp = Plotter(axes=5)
 # axes type 5 builds an annotated orientation cube
 
 vp.load(datadir+'porsche.ply').lighting('metallic')

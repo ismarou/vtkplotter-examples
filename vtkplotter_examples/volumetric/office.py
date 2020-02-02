@@ -31,4 +31,4 @@ slines = streamLines(
                     )
 
 comment = Text(__doc__, c="w")
-show(slines, seeds, furniture(), comment, axes=0)
+show(slines, seeds, furniture(), comment, axes=0, bg='bb')

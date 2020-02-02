@@ -22,4 +22,4 @@ sph = Sphere(pos=(100, 100, 100), r=20)  # add a dummy surface
 doc = Text(__doc__, c="k")
 
 # show both Volume and Mesh
-show(vol, sph, doc, axes=8, verbose=0, bg="w", zoom=1.4)
+show(vol, sph, doc, axes=8, verbose=0, zoom=1.4)

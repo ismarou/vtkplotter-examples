@@ -13,4 +13,4 @@ pl = probePlane(data, origin=orig, normal=(0.1,0.2,1))
 #pl.printInfo()
 #pl.pointColors('scalars', cmap='hot')
 
-show(pl, outermesh, axes=1, bg="w")
+show(pl, outermesh, axes=1)

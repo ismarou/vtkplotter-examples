@@ -21,4 +21,4 @@ if m3.NPoints():
     m3.cutWithPlane(origin=v2, normal=np.cross(zax, v0-v2))
 
 print("Area of overlap:", m3.area())
-show(m1, m2, m3, Text(__doc__), bg='w', axes=8, verbose=0)
+show(m1, m2, m3, Text(__doc__), axes=8, verbose=0)

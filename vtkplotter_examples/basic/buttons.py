@@ -4,7 +4,7 @@ from vtkplotter import *
 
 vp = Plotter()
 
-mesh = vp.load(datadir+"magnolia.vtk", c="v")
+mesh = vp.load(datadir+"magnolia.vtk", c="v").flat()
 
 # add a button to the current renderer (e.i. nr1)
 def buttonfunc():

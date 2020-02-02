@@ -19,5 +19,4 @@ stream = streamLines(mesh, probe,
 
 msg = Text(__doc__, c='k')
 
-show(stream, probe, mesh, mesh.box(), msg,
-     bg='w', axes=3, viewup='z')
+show(stream, probe, mesh, mesh.box(), msg, axes=3, viewup='z')

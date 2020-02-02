@@ -91,7 +91,6 @@ for n in pb.range():
     	 size='fullscreen',
          cmap='bone',
          scalarbar=False,
-         bg='w',
          axes=0,
          zoom=2,
          interactive=False)

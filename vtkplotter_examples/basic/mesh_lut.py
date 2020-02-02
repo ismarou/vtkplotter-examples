@@ -23,4 +23,4 @@ mesh.pointColors(data, cmap=lut1).addScalarBar()
 #Avoid interpolating cell colors before mapping:
 #mesh.mapper.InterpolateScalarsBeforeMappingOff()
 
-mesh.show(bg='white', axes=1, viewup='z')
+mesh.show(axes=1, viewup='z')

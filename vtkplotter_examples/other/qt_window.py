@@ -23,7 +23,7 @@ class MainWindow(Qt.QMainWindow):
         self.vtkWidget = QVTKRenderWindowInteractor(self.frame)
         self.vl.addWidget(self.vtkWidget)
 
-        vp = Plotter(qtWidget=self.vtkWidget, axes=4, bg='white')
+        vp = Plotter(qtWidget=self.vtkWidget)
 
         vp += Cone()
         vp.show()      # create renderer and add the actors

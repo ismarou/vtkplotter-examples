@@ -6,7 +6,7 @@ from vtkplotter import *
 objs = load(datadir+'timecourse1d.npy') # list of vtkActors
 
 # show the biggest and continue (return a Plotter instance)
-vp = show(objs[-1], axes=True, interactive=False)
+vp = show(objs[-1], axes=True, interactive=False, bg='bb')
 vp.actors = objs # set Plotter internal list of objs to be shown
 
 # switch off all the others

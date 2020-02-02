@@ -17,6 +17,6 @@ vol2.color(['lb','db','dg','dr']) # color transfer values along range
 vol2.alpha([0.0, 0.0, 0.2, 0.6, 0.8, 1]) # opacity values along range
 
 # newPlotter triggers the instantiation of a new Plotter object
-plotter2 = show(vol2, pos=(300, 300), bg='white',
+plotter2 = show(vol2, pos=(300, 300),
                 viewup='z', zoom=1.5,
                 newPlotter=True)

@@ -54,7 +54,7 @@ tex = Latex(pde, pos=(0,1.1,.1), s=0.2, c='w')
 wline = Line(y, w_line*10, c='white', lw=4)
 pline = Line(y, p_line/ 4, c='lightgreen', lw=4)
 
-plot(w, wline, tex, at=0, N=2, text='Deflection')
+plot(w, wline, tex, at=0, N=2, bg='bb', text='Deflection')
 plot(p, pline, at=1, text='Load')
 
 
@@ -67,6 +67,3 @@ plot(p, pline, at=1, text='Load')
 #plt.xlabel('$y$')
 #plt.legend(['Deflection ($\\times 50$)', 'Load'], loc='upper left')
 #plt.show()
-
-
-

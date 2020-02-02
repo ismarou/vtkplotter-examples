@@ -5,7 +5,7 @@
 # Check out more examples in directories:
 #	examples/basic
 #	examples/advanced
-#	examples/plotting2d
+#	examples/pyplot
 #	examples/simulations
 #	examples/volumetric
 #	examples/other
@@ -76,7 +76,7 @@ vp.show(mesh2, pts2, at=1, interactive=True)
 ########################################################################################
 # Draw a bunch of simple objects on separate parts of the rendering window:
 # split window to best accommodate 9 renderers
-vp = Plotter(N=9, title="basic shapes", axes=0, bg="white")  # split window in 9 frames
+vp = Plotter(N=9, title="basic shapes", axes=0)  # split window in 9 frames
 # each object can be moved independently
 vp.sharecam = False
 vp.show(Arrow([0, 0, 0], [1, 1, 1]),    at=0)
@@ -92,7 +92,7 @@ vp.show(Cylinder(),                     at=8, interactive=1)
 
 ########################################################################################
 # Draw a bunch of objects from various mesh formats.
-vp = Plotter(shape=(3,3), bg="white")  # split window in 3 rows and 3 columns
+vp = Plotter(shape=(3,3))              # split window in 3 rows and 3 columns
 vp.sharecam = False                    # each object can be moved independently
 vp.show(datadir+"beethoven.ply", at=0, axes=0)     # dont show axes, add a ruler
 vp.show(datadir+"cow.byu",       at=1, zoom=1.15)  # make it 15% bigger

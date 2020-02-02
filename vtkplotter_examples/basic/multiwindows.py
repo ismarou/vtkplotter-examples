@@ -10,7 +10,7 @@ from vtkplotter import *
 
 ##########################################################################
 # this is one instance of the class Plotter with 5 raws and 5 columns
-vp1 = Plotter(shape=(5,5), axes=0, bg="white")
+vp1 = Plotter(shape=(5,5), axes=0)
 
 # set a different background color for a specific subwindow (the last one)
 vp1.renderers[24].SetBackground(0.8, 0.9, 0.9)  # use vtk method SetBackground()

@@ -11,7 +11,7 @@ from vtkplotter import *
 
 amesh = load(datadir+'270.vtk').flat()
 
-meshfix = MeshFix(wrap(amesh.polydata()))
+meshfix = MeshFix(amesh.polydata())
 meshfix.repair()
 repaired = meshfix.mesh
 

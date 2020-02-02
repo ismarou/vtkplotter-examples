@@ -8,7 +8,7 @@ plane1 = load(datadir+"cessna.vtk").c("green").addTrail().addShadow(z=-4)
 plane2 = plane1.clone().c("tomato") # make a clone copy of the first plane
 
 # Setup the scene
-show(world, plane1, plane2, axes=1, bg="white", viewup="z", interactive=0)
+show(world, plane1, plane2, axes=1, viewup="z", interactive=0)
 
 for t in arange(0, 3.2, 0.01):
     plane1.pos(9*t-15, 2-t, sin(3-t)).rotateX(0+t) # make up some movement

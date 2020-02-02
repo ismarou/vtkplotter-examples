@@ -20,7 +20,7 @@ nc, n = conc.shape  # nc= nr. of time Points, n= nr. of vertices
 
 # Create the Plotter instance and position the camera.
 # (values can be copied in the code by pressing C in the rendering window)
-vp = Plotter(verbose=0, axes=0, interactive=0, size=(700, 700), bg="w")
+vp = Plotter(verbose=0, axes=0, interactive=0, size=(700, 700))
 #
 #vp.camera.SetPosition(962, -239, 1034)
 #vp.camera.SetFocalPoint(0.0, 0.0, 10.0)

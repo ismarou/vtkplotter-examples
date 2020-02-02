@@ -26,7 +26,7 @@ x0 = [0, 0, 0]  # set object at this position
 
 shape = load(datadir+'pumpkin.vtk').normalize().pos(x0).lineWidth(.1)
 
-show(shape, at=0, N=2, bg='w', axes={'zxGrid':False})
+show(shape, at=0, N=2, axes={'zxGrid':False})
 
 ############################################################
 # cast rays from the center and find intersections

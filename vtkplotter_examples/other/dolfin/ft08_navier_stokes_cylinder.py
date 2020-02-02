@@ -148,7 +148,6 @@ for n in range(num_steps):
     # Plot solution
     plot(u_,
          cmap='bone',
-         bg='w',
          text=__doc__,
          axes=0, # no axes
          scalarbar='h',

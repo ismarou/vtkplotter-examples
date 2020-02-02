@@ -87,7 +87,6 @@ B = project(as_vector((A_z.dx(1), -A_z.dx(0))), W)
 from vtkplotter.dolfin import plot
 plot(A_z, at=0, N=2, # draw on the first of 2 renderers
      lw=0,           # linewidth of mesh
-     bg='white',
      isolines={'n':20, 'lw':1.5, 'c':'black'},
      scalarbar=False,
      )

@@ -15,4 +15,4 @@ text2 = Text('lego isosurface representation\nvmin=1, vmax=2', c='darkred')
 
 print('numpy array from Volume:', vol.getPointArray().shape)
 
-show([(vol,text1), (lego,text2)], N=2, bg='white')
+show([(vol,text1), (lego,text2)], N=2)

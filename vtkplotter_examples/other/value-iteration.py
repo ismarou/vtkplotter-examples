@@ -100,7 +100,7 @@ def showSolution3D(S, start, goal):
     txts.append(Text(__doc__, c='k'))
     txts.append(Text('Start', pos=[start[1]-1,-start[0]+1.5,1], c='k'))
     txts.append(Text('Goal!', pos=[goal[1] -2,-goal[0] -2.7,1], c='k'))
-    show(path, walls, grd, txts, bg='white', axes=0, zoom=1.2)
+    show(path, walls, grd, txts, axes=0, zoom=1.2)
 
 
 ##########################################################################

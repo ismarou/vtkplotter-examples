@@ -1,14 +1,18 @@
+"""Metrics of quality for
+the cells of a triangular mesh.
 """
-Calculate functions of quality of the elements of a triangular mesh.
-"""
-print(__doc__)
-
 from vtkplotter import *
 
-a1 = meshQuality(Sphere())
-a2 = meshQuality(load(datadir+"bunny.obj").normalize())
-a3 = meshQuality(load(datadir+"motor.byu").normalize())
+mesh = load(datadir+"bunny.obj").scale(1000).computeNormals()
 
-printHistogram(a2, title='bunny quality', c='g') # histo active scalars
+# generate an array for mesh quality
+arr = mesh.quality(cmap='RdYlBu')
+printHistogram(arr, title='bunny quality', c='g')
 
-show(a1, a2, a3, N=3)
+# add a scalar bar for the active scalars
+mesh.lineWidth(0.1).addScalarBar()
+
+# create numeric labels of active scalar on top of cells
+labs = mesh.labels( cells=True, precision=3)
+
+show(mesh, labs, Text(__doc__), bg='bb', zoom=4)

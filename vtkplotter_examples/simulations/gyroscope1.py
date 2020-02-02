@@ -26,7 +26,7 @@ Lrot = I * omega * gaxis  # angular momentum
 cm = gpos + 0.5 * Ls * gaxis  # center of mass of shaft
 
 # ############################################################ the scene
-vp = Plotter(axes=0, interactive=0, bg="w")
+vp = Plotter(axes=0, interactive=0)
 vp += Text(__doc__)
 
 shaft = Cylinder([[0, 0, 0], Ls * gaxis], r=0.03, c="dg")

@@ -52,4 +52,4 @@ s1.alpha(0.5)
 s2 = v2.isosurface(threshold=[t for t in arange(0, 1, 0.1)])
 s2.alpha(0.5)
 
-show([[v1, s1], s2], N=2, axes=8, bg="w")
+show([[v1, s1], s2], N=2, axes=8)

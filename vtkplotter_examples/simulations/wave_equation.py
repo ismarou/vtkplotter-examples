@@ -90,7 +90,7 @@ for i in pb.range():
 ####################################################
 # Visualize the result
 ####################################################
-vp = Plotter(interactive=0, axes=2, bg="w")  # choose axes type nr.2
+vp = Plotter(interactive=0, axes=2)  # choose axes type nr.2
 vp.ytitle = "u(x,t)"
 vp.ztitle = ""  # will not draw z axis
 

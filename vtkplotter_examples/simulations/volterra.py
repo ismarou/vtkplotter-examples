@@ -60,5 +60,5 @@ Text(__doc__) # the text comment in the header
 
 show(...,  # all sofar created objects
     axes={'xtitle':'time', 'ytitle':'x', 'ztitle':'y', 'zxGrid':True, 'yzGrid':False},
-    viewup='x',
+    bg="blackboard", viewup='x',
 )

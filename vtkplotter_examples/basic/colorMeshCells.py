@@ -18,7 +18,7 @@ print('all mesh arrays:', sc.getArrayNames())
 
 tc = Text(__doc__, c='k')
 
-show(sc, tc, at=0, N=2, bg='w')
+show(sc, tc, at=0, N=2)
 
 ################################################
 sv = Torus(res=5).lw(0.1)

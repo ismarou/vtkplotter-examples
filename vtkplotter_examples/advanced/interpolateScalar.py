@@ -31,4 +31,4 @@ mesh.pointColors(interpolated_desc, cmap='rainbow')
 mesh.addScalarBar(title='3*sin(4*y)')
 rpts = Points(ptsubset, r=8, c='white')
 
-show(mesh, rpts, Text(__doc__), axes=1, bg="w")
+show(mesh, rpts, Text(__doc__), axes=1)

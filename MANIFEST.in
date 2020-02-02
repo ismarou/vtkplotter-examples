@@ -8,7 +8,7 @@ include vtkplotter_examples/other/dolfin/*
 include vtkplotter_examples/other/dolfin/noplot/*
 include vtkplotter_examples/other/trimesh/*
 
-include vtkplotter_examples/plotting2d/*
+include vtkplotter_examples/pyplot/*
 include vtkplotter_examples/simulations/*
 include vtkplotter_examples/volumetric/*
 

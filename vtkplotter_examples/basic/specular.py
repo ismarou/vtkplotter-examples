@@ -7,7 +7,7 @@ specular, specularPower, specularColor.
 from vtkplotter import Plotter, Text, Arrow, datadir
 
 
-vp = Plotter(axes=1, bg="w")
+vp = Plotter(axes=1)
 
 ambient, diffuse, specular = 0.1, 0., 0.
 specularPower, specularColor= 20, 'white'

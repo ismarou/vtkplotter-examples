@@ -17,7 +17,7 @@ import random, numpy as np
 screen_w = 800
 screen_h = 800
 
-vp = Plotter(size=(screen_w, screen_h), axes=0, interactive=0, bg="w")
+vp = Plotter(size=(screen_w, screen_h), axes=0, interactive=0)
 
 # Constants and time step
 Nsp = 200  # Number of small spheres

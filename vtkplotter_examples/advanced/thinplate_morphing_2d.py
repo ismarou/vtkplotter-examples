@@ -26,7 +26,7 @@ class Morpher:
         self.params = np.array(pars)
 
         ptmoved = np.multiply((self.pttarget-self.ptsource).T, (1+self.params)).T + self.ptsource
-        self.morphed_source = thinPlateSpline(self.source, self.ptsource, ptmoved)
+        self.morphed_source = self.source.clone().thinPlateSpline(self.ptsource, ptmoved)
 
         d = self.morphed_source.points() - self.target.points()
         chi2 = np.sum(np.multiply(d,d))/self.ndf
@@ -64,7 +64,7 @@ class Morpher:
         maxb = max(x2-x1, y2-y1)
         grid0 = Grid(self.source.centerOfMass(), sx=maxb, sy=maxb, resx=40, resy=40)
         T = self.morphed_source.getTransform()
-        grid1 = grid0.alpha(0.3).wireframe(0).clone().transformMesh(T) # warp the grid
+        grid1 = grid0.alpha(0.3).wireframe(0).clone().applyTransform(T) # warp the grid
 
         text1 = Text(__doc__, c="k")
         text2 = Text("morphed vs target\nn.d.f.="+str(self.ndf), c="k")
@@ -72,7 +72,7 @@ class Morpher:
 
         self.morphed_source.pointSize(10).c('g')
         settings.interactorStyle = 7 # lock scene to 2D
-        show(grid0, self.source, self.target, arrows, text1, at=0, N=2, bg="w", axes=0)
+        show(grid0, self.source, self.target, arrows, text1, at=0, N=2, axes=0)
         show(grid1, self.morphed_source, self.target, text2, at=1, zoom=1.2, interactive=1)
 
 

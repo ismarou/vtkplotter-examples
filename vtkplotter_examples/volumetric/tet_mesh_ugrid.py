@@ -18,4 +18,4 @@ mesh = Mesh(ug).color(cmap).alpha(0.2).addScalarBar(c='w')
 
 txt = Text(__doc__, c='w')
 
-show([(txt,vol), mesh], N=2)
+show([(txt,vol), mesh], N=2, bg='bb')

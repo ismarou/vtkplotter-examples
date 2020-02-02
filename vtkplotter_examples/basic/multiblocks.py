@@ -18,6 +18,6 @@ printc("~save wrote file", filename,
 # load back from file into a list of meshes/volumes
 mbacts = load(filename) # loads and unpacks a MultiBlockData obj
 
-show(mbacts, Text('load("file.vtm") #MultiBlockData', c='k'), bg='w')
+show(mbacts, Text('load("file.vtm") #MultiBlockData', c='k'))
 
 show(mblock, Text('show(multiblock)', c='w'), newPlotter=True, pos=(800,0))

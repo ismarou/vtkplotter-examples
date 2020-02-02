@@ -13,7 +13,7 @@ def slider2(widget, event):
     mesh.alpha(value)
 
 
-vp = Plotter(axes=0, bg="w")
+vp = Plotter(axes=0)
 mesh = vp.load(datadir+"magnolia.vtk").flat().lw(0.1)
 
 # pos = position corner number: horizontal [1-4] or vertical [11-14]

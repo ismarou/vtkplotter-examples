@@ -8,7 +8,4 @@ s  = load(datadir+'spider.ply')
 t2 = Text("Density field as a Volume from point cloud")
 v  = pointDensity(s).mode(1).printInfo()
 
-show([ [s, t1],
-       [v, t2] ],
-     N=2,
-)
+show([ [s,t1], [v,t2] ], N=2)

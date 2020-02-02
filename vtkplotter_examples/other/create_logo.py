@@ -4,7 +4,7 @@ Create an animated logo.
 from vtkplotter import *
 
 exa = Polygon().scale(4.1).pos(5.25, 4.8, 0).off()
-his = hexHistogram([-1, 1], [-1, 1]).getMeshes()
+his = histogram([-1, 1], [-1, 1], mode='hex').unpack()
 
 exah, cmh = [], []
 for h in his:
@@ -19,7 +19,7 @@ v2 = vector(9.4, 2.7, 0)
 t1 = Text("EMBL",  v1, c="k",  s=1.5, depth=0)
 t2 = Text("European Molecular\nBiology Laboratory", v2, c="dg", s=0.6, depth=0)
 
-show(exa, exah, t1, t2, bg="w", axes=0, interactive=0, elevation=-50)
+show(exa, exah, t1, t2, axes=0, interactive=0, elevation=-50)
 for ti in reversed(range(100)):
     t = ti / 100.
     for j, h in enumerate(exah):

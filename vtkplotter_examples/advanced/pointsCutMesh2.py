@@ -28,5 +28,4 @@ rb = Ribbon(pts0, pts1).bc('green')
 #cut with the ribbon and then with a yz plane
 scut = s.clone().c('blue').alpha(0.7).cutWithMesh(rb)
 
-show(s, Points(pts), ptsm, rb, scut, Text(__doc__),
-     axes=1, bg='white')
+show(s, Points(pts), ptsm, rb, scut, Text(__doc__), axes=1)

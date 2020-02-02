@@ -6,24 +6,23 @@ Green histogram is the distribution of residuals from the fitting.
 """
 from vtkplotter import *
 
-vp = Plotter(verbose=0, axes=0, bg='w')
+vp = Plotter()
+vp += Text(__doc__, pos=1)
 
-s = vp.load(datadir+"cow.vtk").alpha(0.3).subdivide()  # remesh
+s = vp.load(datadir+"cow.vtk").alpha(0.3).subdivide().normalize()
 
 variances = []
 for i, p in enumerate(s.points()):
     if i % 100:
         continue  # skip most points
     pts = s.closestPoint(p, N=12)  # find the N closest points to p
-    plane = fitPlane(pts)  # find the fitting plane
+    plane = fitPlane(pts)          # find the fitting plane
     vp += plane
-    vp += Points(pts)  # blue points
-    vp += Point(p, r=5, c="red")  # mark in red the current point
+    vp += Points(pts)              # blue points
     cn, v = plane.info["center"], plane.info["normal"]
     vp += Arrow(cn, cn + v / 15.0, c="g")
     variances.append(plane.info["variance"])
 
-vp += histogram(variances, c="g").scale([30,.03,30]).pos(-0.5, -1.2, -.6)
+vp += histogram(variances, yscale=0.003).scale(10).pos(.6,-.3,-.9)
 
-vp += Text(__doc__, pos=1)
 vp.show(viewup="z")

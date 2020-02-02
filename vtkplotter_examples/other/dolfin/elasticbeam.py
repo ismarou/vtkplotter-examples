@@ -52,7 +52,6 @@ plot(u, mode="displaced mesh",
      text=__doc__,
      scalarbar=False,
      axes=1,
-     bg='white',
      viewup='z')
 #exportWindow('elasticbeam1.x3d') # generate a html test page
 

@@ -1,4 +1,5 @@
-# Create a Volume from a numpy object using imread
+"""Create a Volume
+from a numpy object using imread"""
 #
 # https://github.com/marcomusy/vtkplotter/issues/78
 from vtkplotter import *
@@ -18,5 +19,5 @@ vraw.permuteAxes(2,1,0).mirror("y")
 
 # Compare loading the volume directly with the numpy volume:
 # they should be the same
-show(voriginal, vraw, N=2, axes=1)
-
+show([(voriginal,Text(__doc__)),
+      (vraw, Text("from imread:"))], N=2, axes=1)

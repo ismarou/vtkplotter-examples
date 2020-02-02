@@ -21,7 +21,7 @@ mapkeys = [
     "winter",
 ]
 
-vp = Plotter(N=len(mapkeys), axes=4)
+vp = Plotter(N=len(mapkeys))
 vp.legendSize = 0.4
 
 mug = vp.load(datadir+"mug.ply")

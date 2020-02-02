@@ -104,7 +104,6 @@ for t in pb.range():
     plot(u1,
          mode='mesh and arrows',
          text="Velocity of fluid",
-         bg='w',
          cmap='jet',
          scale=0.3, # unit conversion factor
          scalarbar=False,

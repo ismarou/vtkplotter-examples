@@ -13,7 +13,7 @@ from vtkplotter import *
 import scipy.optimize as opt
 
 
-vp = Plotter(shape=[1, 3], interactive=0, bg="w", axes=1)
+vp = Plotter(shape=[1, 3], interactive=0, axes=1)
 
 
 class Morpher:

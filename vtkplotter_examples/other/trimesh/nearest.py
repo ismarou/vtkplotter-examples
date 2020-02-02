@@ -27,4 +27,4 @@ cloud_close.vertices_color    = cloud_colors
 arrs = Arrows(cloud_original.vertices, cloud_close.vertices, c='w')
 
 ## create a scene containing the mesh and two sets of points
-show(mesh, cloud_original, cloud_close, arrs, Text(__doc__))
+show(mesh, cloud_original, cloud_close, arrs, Text(__doc__), bg='bb')

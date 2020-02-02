@@ -70,6 +70,7 @@ for i in range(nt):
              lc='white',        # line color
              ytitle="diplacement at  T=%g" % (i*dt),
              scalarbar=False,
+             bg='bb',
              interactive=False,
              )
         plot(uk2, frame,

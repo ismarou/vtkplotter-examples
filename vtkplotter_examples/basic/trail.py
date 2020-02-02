@@ -6,7 +6,7 @@ print(__doc__)
 from vtkplotter import Plotter, sin, Sphere, Point
 
 
-vp = Plotter(axes=6, bg='white', interactive=False)
+vp = Plotter(axes=6, interactive=False)
 
 s = Sphere().c("green").bc("tomato")
 s.cutWithPlane([-0.9, 0, 0])  # cut left part of sphere

@@ -12,14 +12,13 @@ pl = probeLine(vol, p1, p2, res=50).lw(3)
 xvals = pl.points()[:,0]
 yvals = pl.getPointArray()
 
-plt = plotxy([xvals, yvals],
-             splined=True,
-             lc="r",       # line color
-             marker="*",   # marker style
-             mc="dr",      # marker color
-             ms=0.6,       # marker size
-            )
+plt = plot(xvals, yvals,
+           splined=True,
+           lc="r",       # line color
+           marker="*",   # marker style
+           mc="dr",      # marker color
+           ms=0.6,       # marker size
+          )
 
 #show(vol, pl, comment, plt, axes=1, bg='w')
-show([(vol, pl, comment), plt],
-      N=2, sharecam=0, axes=1, bg='w')
+show([(vol, pl, comment), plt], N=2, sharecam=0, axes=1)

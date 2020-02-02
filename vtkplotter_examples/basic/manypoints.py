@@ -1,11 +1,15 @@
-"""
-Colorize a large cloud of points by passing
+"""Colorize a large cloud of 1M points by passing
 colors and transparencies in the format (R,G,B,A)
 """
-print(__doc__)
-from vtkplotter import Points
+from vtkplotter import *
 import numpy as np
 import time
+
+settings.renderPointsAsSpheres = False
+settings.pointSmoothing = False
+settings.xtitle = 'red axis'
+settings.ytitle = 'green axis'
+settings.ztitle = 'blue*alpha axis'
 
 N = 1000000
 
@@ -22,6 +26,6 @@ pts = Points(pts, r=2, c=RGBA) #fast
 #pts = Points(pts, r=2, c=pts, alpha=pts[:, 2]) #slow
 
 t1 = time.time()
-print("----> elapsed time:", t1-t0, "seconds for N:", N)
+print("-> elapsed time:", t1-t0, "seconds for N:", N)
 
-pts.show(bg="white", axes=True)
+show(pts, Text(__doc__), axes=True)

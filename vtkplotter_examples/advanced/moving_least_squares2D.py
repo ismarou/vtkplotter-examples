@@ -6,7 +6,7 @@ each point in color scale (left) or in size scale (right).
 from vtkplotter import *
 import numpy as np
 
-vp1 = Plotter(N=3, bg="w")
+vp1 = Plotter(N=3)
 
 mesh = vp1.load(datadir+"bunny.obj").normalize().subdivide()
 
@@ -25,12 +25,13 @@ vp1.show(s0, at=0)
 mls1 = smoothMLS2D(  s0, f=0.5, showNPlanes=30)  #first pass
 vp1.show(mls1, at=1)
 
-mls2 = smoothMLS2D(mls1, radius=0.1).legend("second pass")
+# mls1 is an Assembly so unpack it to get the first object it contains
+mls2 = smoothMLS2D(mls1.unpack(0), radius=0.1).legend("second pass")
 vp1.show(mls2, at=2)
 
 
 #################################### draw errors
-vp2 = Plotter(pos=(300, 400), N=2, bg="w")
+vp2 = Plotter(pos=(300, 400), N=2)
 
 variances = mls2.info["variances"]
 vmin, vmax = np.min(variances), np.max(variances)

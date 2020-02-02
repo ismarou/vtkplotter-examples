@@ -113,8 +113,6 @@ for n in range(num_steps):
          lw=0,
          isolines={"n": 12, "lw":1, "c":'black', "alpha":0.1},
          warpZfactor=0.8,
-         # scalarbar=False,
-         bg='white',
          text=__doc__,
          axes=7, #bottom ruler
          ztitle='',

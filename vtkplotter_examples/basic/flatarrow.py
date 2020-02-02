@@ -11,4 +11,4 @@ for i in range(10):
     FlatArrow(l1, l2, c=i, tipSize=1, tipWidth=1)
 
 # three points, aka ellipsis, retrieves the list of all created actors
-show(..., viewup="z", axes=1, bg="w")
+show(..., viewup="z", axes=1)

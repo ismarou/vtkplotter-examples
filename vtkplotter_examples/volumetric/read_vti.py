@@ -38,4 +38,4 @@ vol1.alphaGradient([0.0, 0.5, 0.9])
 vol2 = load(datadir+"vase.vti").mode(1).addPos(60,0,0)
 
 # show command creates and returns an instance of class Plotter
-show(vol1, vol2, Text(__doc__), bg="w", axes=1)
+show(vol1, vol2, Text(__doc__), axes=1)

@@ -55,7 +55,7 @@ solve(a == L, w, bc)
 from vtkplotter.dolfin import plot, Text
 
 # Plot solution on mesh, and warp z-axis by the scalar value
-plot(u, warpZfactor=0.8, bg='white', legend='u', text=__doc__)
+plot(u, warpZfactor=0.8, legend='u', text=__doc__)
 
 # Plot the sigma vector on the mesh. Try also mode='arrows'
 msg = Text("> plot(sigma, mode='mesh lines', warpZfactor= -0.2)", c='w')

@@ -15,4 +15,4 @@ scals = apts.getPointArray(0)
 
 printHistogram(scals, minbin=1, horizontal=1, c='g')
 
-show(vol, apts, Text(__doc__), bg='w', axes=8)
+show(vol, apts, Text(__doc__), axes=8)

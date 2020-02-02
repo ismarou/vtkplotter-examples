@@ -77,7 +77,7 @@ class Cell:
 
 
 ##############################################################################
-vp = Plotter(verbose=0, interactive=0, axes=3, bg="w")
+vp = Plotter(verbose=0, interactive=0, axes=3)
 
 # place vtkCamera at a specific position
 # (get these numbers by pressing Shift-C)

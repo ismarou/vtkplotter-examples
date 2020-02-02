@@ -18,7 +18,7 @@ cd simulations; ./run_all.sh; cd ..
 
 cd volumetric;  ./run_all.sh; cd ..
 
-cd plotting2d;  ./run_all.sh; cd ..
+cd pyplot;    ./run_all.sh; cd ..
 
 cd other;       ./run_all.sh; cd ..
 
@@ -77,7 +77,7 @@ vtkplotter
 # python basic/kspline.py
 # python advanced/pointsCutMesh2.py
 # python simulations/tunnelling1.py
-# python plotting2d/text_just.py
+# python pyplot/text_just.py
 # python other/animation1.py
 # python other/animation2.py
 # python other/qt_tabs_ui.py

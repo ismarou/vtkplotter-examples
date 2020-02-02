@@ -50,17 +50,17 @@ python interpolateScalar.py
 echo Running interpolateField.py
 python interpolateField.py
 
-echo Running thinplate.py
-python thinplate.py
+echo Running thinplate_morphing1.py
+python thinplate_morphing1.py
 
-echo Running thinplate_grid.py
-python thinplate_grid.py
-
-echo Running thinplate_morphing.py
-python thinplate_morphing.py
+echo Running thinplate_morphing2.py
+python thinplate_morphing2.py
 
 echo Running thinplate_morphing_2d.py
 python thinplate_morphing_2d.py
+
+echo Running thinplate_grid.py
+python thinplate_grid.py
 
 echo Running meshquality.py
 python meshquality.py

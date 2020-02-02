@@ -18,7 +18,7 @@ from vtkplotter import *
 import numpy as np
 
 
-vp = Plotter(N=4, axes=0, bg='w')
+vp = Plotter(N=4, axes=0)
 
 mesh = vp.load(datadir+"pumpkin.vtk")
 vp.show(mesh, at=0)
