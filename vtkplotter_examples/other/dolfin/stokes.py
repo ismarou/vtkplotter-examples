@@ -5,6 +5,7 @@ the velocity and first degree elements for the pressure (Taylor-Hood elements).
 # Credits:
 # https://github.com/pf4d/fenics_scripts/blob/master/cbc_block/stokes.py
 from dolfin import *
+import numpy as np
 from vtkplotter.dolfin import plot, datadir, Latex
 
 # Load mesh and subdomains
@@ -40,11 +41,34 @@ solve(a == L, w, bcs)
 # Split the mixed solution using a shallow copy
 (u, p) = w.split()
 
-######################################################## vtkplotter:
+##################################################################### vtkplotter
 f = r'-\nabla \cdot(\nabla u+p I)=f ~\mathrm{in}~\Omega'
 formula = Latex(f, pos=(0.55,0.45,-.05), s=0.1)
 
 plot(u, formula, at=0, N=2,
      mode='mesh and arrows', scale=.03,
      wireframe=True, scalarbar=False, style=1)
-plot(p, at=1, text="pressure", cmap='rainbow')
+plot(p, at=1, text="pressure", cmap='rainbow', interactive=False)
+
+
+##################################################################### streamlines
+# A list of seed points (can be automatic: just comment out 'probes')
+ally = np.linspace(0,1, num=100)
+probes = np.c_[np.ones_like(ally), ally, np.zeros_like(ally)]
+
+plot(u, 
+     mode='mesh with streamlines',
+     streamlines={'tol':0.02,            # control density of streams
+                  'lw':2,                # line width 
+                  'direction':'forward', # direction of integration
+                  'maxPropagation':1.2,  # max length of propagation
+                  'probes':probes,       # custom list of point in space as seeds
+                 },
+     c='white',                          # mesh color
+     alpha=0.3,                          # mesh alpha
+     lw=0,                               # mesh line width
+     wireframe=True,                     # show as wireframe
+     bg='blackboard',                    # background color
+     newPlotter=True,                    # new window
+     pos=(200,200),                      # window position on screen
+     )
