@@ -126,26 +126,6 @@ echo Running demo_auto-adaptive-poisson.py
 python demo_auto-adaptive-poisson.py
 
 
-######################################
-echo 
-echo
-echo Running examples in directory dolfin/noplot/
-echo
-echo
-
-echo Running noplot/ex01_show-mesh.py
-python noplot/ex01_show-mesh.py
-
-echo Running noplot/ex02_tetralize-mesh.py
-python noplot/ex02_tetralize-mesh.py
-
-echo Running noplot/ex03_poisson.py
-python noplot/ex03_poisson.py
-
-echo Running noplot/ex04_mixed-poisson.py
-python noplot/ex04_mixed-poisson.py
-
-
 
 
 
