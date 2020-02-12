@@ -9,7 +9,7 @@ from setuptools import setup
 ##############################################################
 setup(
     name='vtkplotter-examples',
-    version='2020.1.0',
+    version='2020.2.0',
     packages=['vtkplotter_examples'],
     scripts=[],
     install_requires=['vtkplotter'],
