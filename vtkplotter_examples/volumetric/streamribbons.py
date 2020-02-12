@@ -16,7 +16,7 @@ pl3d.Update()
 domain = pl3d.GetOutput().GetBlock(0)
 
 ######################## vtkplotter
-msg = Text(__doc__, c='w')
+msg = Text2D(__doc__, c='w')
 box = Mesh(domain, c=None, alpha=0.1)
 
 probe = Line([9,0,28], [11,0,33], res=11).color('k')

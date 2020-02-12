@@ -3,7 +3,7 @@ satisfies a threshold criterion.
 """
 from vtkplotter import *
 
-doc = Text(__doc__)
+doc = Text2D(__doc__)
 
 man = load(datadir+"man.vtk")
 

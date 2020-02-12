@@ -1,7 +1,7 @@
 """Example that shows how to draw very large number of
 spheres (same for Points, lines) with different colors
 or different radius."""
-from vtkplotter import show, Spheres, Text
+from vtkplotter import show, Spheres, Text2D
 from random import gauss
 
 N = 40000
@@ -18,4 +18,4 @@ s1 = Spheres(pts, r=rads, c="lb", res=8)
 
 print("..rendering spheres:", N * 2)
 show(s0, at=0, N=2, axes=2, viewup=(-0.7, 0.7, 0))
-show(s1, Text(__doc__), at=1, zoom=1.5, interactive=1)
+show(s1, Text2D(__doc__), at=1, zoom=1.5, interactive=1)

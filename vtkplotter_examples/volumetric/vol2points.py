@@ -1,7 +1,7 @@
 """Extract all image voxels as points"""
 from vtkplotter import *
 
-t = Text(__doc__, c='white')
+t = Text2D(__doc__, c='white')
 v = load(datadir+'vase.vti') # Volume
 
 pts = v.toPoints().printInfo() # returns a Mesh(vtkActor)

@@ -5,7 +5,7 @@ Right: the Volume is isosurfaced.
 """
 from vtkplotter import *
 
-doc = Text(__doc__, c="k")
+doc = Text2D(__doc__, c="k")
 
 s = load(datadir+"bunny.obj").normalize().wireframe()
 

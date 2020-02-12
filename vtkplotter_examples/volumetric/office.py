@@ -30,5 +30,5 @@ slines = streamLines(
                     tubes={"radius":0.004, "varyRadius":2, "ratio":1},
                     )
 
-comment = Text(__doc__, c="w")
+comment = Text2D(__doc__, c="w")
 show(slines, seeds, furniture(), comment, axes=0, bg='bb')

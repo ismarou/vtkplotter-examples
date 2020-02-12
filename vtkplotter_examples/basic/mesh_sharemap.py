@@ -2,7 +2,7 @@
 How to share the same color map
 across different meshes.
 """
-from vtkplotter import load, Text, show, datadir
+from vtkplotter import load, Text2D, show, datadir
 
 
 #####################################
@@ -17,4 +17,4 @@ scals = man2.points()[:, 2] * 5 + 37  # pick z coordinates [28->44]
 
 man2.pointColors(scals, cmap="jet", vmin=18, vmax=44)
 
-show([[man1, Text(__doc__)], man2], N=2, elevation=-40)
+show([[man1, Text2D(__doc__)], man2], N=2, elevation=-40)

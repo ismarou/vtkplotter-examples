@@ -56,7 +56,7 @@ Line(np.vstack([T, sol3[:,0], sol3[:,1]]).T, c='lb')
 
 Latex(r'\dot{x}=x-x y',        c='white').rotateZ(-90).pos(4,6.5,0)
 Latex(r'\dot{y}=\alpha(xy-y)', c='white').rotateZ(-90).pos(3,6.5,0)
-Text(__doc__) # the text comment in the header
+Text2D(__doc__, c='w') # the text comment in the header
 
 show(...,  # all sofar created objects
     axes={'xtitle':'time', 'ytitle':'x', 'ztitle':'y', 'zxGrid':True, 'yzGrid':False},

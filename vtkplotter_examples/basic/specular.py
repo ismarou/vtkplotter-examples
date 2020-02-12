@@ -4,7 +4,7 @@ ambient, diffuse
 specular, specularPower, specularColor.
 """
 #https://lorensen.github.io/VTKExamples/site/Python/Rendering/SpecularSpheres
-from vtkplotter import Plotter, Text, Arrow, datadir
+from vtkplotter import Plotter, Text2D, Arrow, datadir
 
 
 vp = Plotter(axes=1)
@@ -13,11 +13,10 @@ ambient, diffuse, specular = 0.1, 0., 0.
 specularPower, specularColor= 20, 'white'
 
 for i in range(8):
-    s = vp.load(datadir+'pumpkin.vtk')#.color(i)
+    s = vp.load(datadir+'pumpkin.vtk', c='gold')
     s.normalize().pos((i%4)*2.2, int(i<4)*3, 0)
 
     #s.phong()
-    #s.gouraud()
     s.flat()
 
     # modify the default with specific values
@@ -26,7 +25,7 @@ for i in range(8):
     diffuse += 0.125
     specular += 0.125
 
-vp += Text(__doc__)
+vp += Text2D(__doc__)
 vp.show()
 
 print('Adding a light source..')

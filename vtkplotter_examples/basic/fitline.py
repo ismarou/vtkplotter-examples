@@ -6,7 +6,7 @@ Show the first set of 20 points and fit a plane to them.
 """
 from __future__ import division, print_function
 import numpy as np
-from vtkplotter import Plotter, fitLine, fitPlane, Points, Text
+from vtkplotter import *
 
 # declare the class instance
 vp = Plotter(verbose=0, title="linear fitting")
@@ -33,6 +33,6 @@ print("Line Fit slope = ", vp.actors[0].info["slope"])
 plane = fitPlane(data)  # fit a plane
 print("Plan Fit normal=", plane.info["normal"])
 
-vp += [plane, Text(__doc__)]
+vp += [plane, Text2D(__doc__)]
 
 vp.show(axes=1)

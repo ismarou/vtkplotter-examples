@@ -15,5 +15,5 @@ for x in range(0,10):
         v = linInterpolate(p, positions, directions)
         Arrow(p, p+v, s=0.001)
 
-Text(__doc__)
+Text2D(__doc__)
 show(..., axes=1)

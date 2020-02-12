@@ -14,7 +14,7 @@ import numpy as np
 #    Follow instructions at https://shtools.oca.eu/shtools
 import pyshtools
 from scipy.interpolate import griddata
-from vtkplotter import Points, load, mag, Text, show, spher2cart, datadir
+from vtkplotter import Points, load, mag, Text2D, show, spher2cart, datadir
 print(__doc__)
 
 #############################################################
@@ -94,5 +94,5 @@ mesh1_col = Points(pts1colored, r=8, c="k", alpha=0.5)
 mesh2 = Points(pts2, r=3, c="r", alpha=0.5)
 mesh2.clean(0.01) # impose point separation of 1% of the bounding box size
 
-comment = Text('spherical harmonics\nexpansion of order '+str(lmax))
+comment = Text2D('spherical harmonics\nexpansion of order '+str(lmax))
 show(mesh2, comment, at=1, interactive=True)

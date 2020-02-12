@@ -17,7 +17,7 @@ img = reader.GetOutput() # vtkImageData object
 #img = load(datadir+"vase.vti").imagedata()
 
 #################################
-from vtkplotter import Volume, show, Text
+from vtkplotter import Volume, show, Text2D
 
 # can set colors and transparencies along the scalar range
 # from minimum to maximum value. In this example voxels with
@@ -38,4 +38,4 @@ vol1.alphaGradient([0.0, 0.5, 0.9])
 vol2 = load(datadir+"vase.vti").mode(1).addPos(60,0,0)
 
 # show command creates and returns an instance of class Plotter
-show(vol1, vol2, Text(__doc__), axes=1)
+show(vol1, vol2, Text2D(__doc__), axes=1)

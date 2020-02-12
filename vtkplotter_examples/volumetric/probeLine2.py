@@ -2,7 +2,7 @@
 and plot the probed values"""
 from vtkplotter import *
 
-comment = Text(__doc__)
+comment = Text2D(__doc__)
 
 vol = load(datadir+'vase.vti')
 
@@ -13,7 +13,7 @@ xvals = pl.points()[:,0]
 yvals = pl.getPointArray()
 
 plt = plot(xvals, yvals,
-           splined=True,
+           spline=True,
            lc="r",       # line color
            marker="*",   # marker style
            mc="dr",      # marker color

@@ -24,4 +24,4 @@ t.clean(tol)
 # spline the resulting set of points
 spl = Spline(t, smooth=smooth)
 
-show(tube, t, spl, Text(__doc__), axes=1, bg='bb', newPlotter=True)
+show(tube, t, spl, Text2D(__doc__), axes=1, bg='bb', newPlotter=True)

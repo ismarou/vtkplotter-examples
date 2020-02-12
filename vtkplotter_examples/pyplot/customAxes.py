@@ -6,7 +6,7 @@ from vtkplotter import *
 
 box = Box(pos=(2.4,0,0), length=12, width=10, height=8).alpha(0)
 
-show(box, Text(__doc__),
+show(box, Text2D(__doc__),
      axes={
         'xtitle':'Some long variable description [a.u.]',
         'ytitle':'This is my \ncustomized y-axis',

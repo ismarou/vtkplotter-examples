@@ -16,7 +16,7 @@ for i in range(sc.NCells()):
 sc.cellColors(cols, alpha=alphas, mode='colors')
 print('all mesh arrays:', sc.getArrayNames())
 
-tc = Text(__doc__, c='k')
+tc = Text2D(__doc__, c='k')
 
 show(sc, tc, at=0, N=2)
 
@@ -28,7 +28,7 @@ cols = [i for i in range(sv.NPoints())]
 sv.pointColors(cols, mode='colors')
 print('all mesh arrays:', sv.getArrayNames())
 
-tv = Text('''pointColors(mode='colors')
+tv = Text2D('''pointColors(mode='colors')
 	tries to interpolate inbetween vertices''', c='k')
 
 show(sv, tv, at=1, interactive=True)

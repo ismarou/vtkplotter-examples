@@ -15,4 +15,4 @@ m.backColor('violet').lineColor('tomato').lineWidth(2)
 printc('points():\n', m.points(), c=3)
 printc('faces(): \n', m.faces(),  c=3)
 
-show(m, Text(__doc__), viewup='z', axes=8)
+show(m, Text2D(__doc__), viewup='z', axes=8)

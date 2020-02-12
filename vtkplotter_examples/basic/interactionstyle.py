@@ -13,10 +13,11 @@ from vtkplotter import *
 
 show(Spring(), Cube(), at=[0, 1], shape=(3, 1), bg="blackboard")
 
-t = Text(
+t = Text2D(
     """TrackballCamera is the default
 ...lets change it to JoystickCamera:""",
-    c="k", bg="w" )
+    c="k", bg="w"
+    )
 
 print("..change it to JoystickCamera")
 show(Paraboloid(), t, at=2, interactorStyle=2, interactive=True)

@@ -20,9 +20,9 @@ a = vp1.load(datadir+"airboat.vtk")
 b = vp1.load(datadir+"cessna.vtk", c="red")
 c = vp1.load(datadir+"atc.ply")
 
-# show a text in each renderer
+# show a Text2D in each renderer
 for i in range(25):
-    txt = Text("renderer\nnr."+str(i), c='k', font='arial', s=1)
+    txt = Text2D("renderer\nnr."+str(i), c='k', font='arial', s=1)
     vp1.show(txt, at=i)
 
 vp1.show(a, at= 6)
@@ -45,7 +45,7 @@ vp2 = Plotter(pos=(500, 250), shape='2/6')
 
 for i in range(len(vp2.renderers)):
     s2 = s.clone().color(i)
-    txt = Text('renderer #'+str(i))
+    txt = Text2D('renderer #'+str(i))
     vp2.show(s2, txt, at=i)
 
 interactive()

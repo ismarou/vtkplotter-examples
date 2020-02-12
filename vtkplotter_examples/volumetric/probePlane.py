@@ -1,7 +1,7 @@
 """
 Intersect a Volume (voxel dataset) with planes
 """
-from vtkplotter import show, load, probePlane, vector, Text, datadir
+from vtkplotter import *
 
 vol = load(datadir+"embryo.slc")
 
@@ -13,4 +13,4 @@ for i in range(6):
     planes.append(a)
     # print(max(a.getPointArray(0))) # access scalars this way, 0 means first
 
-show(planes, Text(__doc__))
+show(planes, Text2D(__doc__))

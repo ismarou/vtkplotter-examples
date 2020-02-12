@@ -2,7 +2,7 @@
 Mouse click event example
 click of the mouse causes a call to a custom function.
 """
-from vtkplotter import Plotter, printc, Text, datadir
+from vtkplotter import *
 
 
 def onLeftClick(mesh):
@@ -27,5 +27,5 @@ vp.mouseRightClickFunction = onRightClick
 
 printc("Click object to trigger function call", invert=1, box="-")
 
-vp += Text(__doc__)
+vp += Text2D(__doc__)
 vp.show()

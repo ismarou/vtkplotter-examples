@@ -24,5 +24,5 @@ for i, p in enumerate(s.points()):
     vp += Points(pts)
     vp += Line(sph.info["center"], p, lw=2)
 
-vp += Text(__doc__)
+vp += Text2D(__doc__)
 vp.show(viewup="z")

@@ -28,7 +28,7 @@ v = vector(thetadot, phidot, psidot)
 
 # ############################################################ the scene
 vp = Plotter(axes=0, interactive=0)
-vp += Text(__doc__)
+vp += Text2D(__doc__)
 
 shaft = Cylinder([[0, 0, 0], [Lshaft, 0, 0]], r=0.03, c="dg")
 rotor = Cylinder([[Lshaft / 2.2, 0, 0], [Lshaft / 1.8, 0, 0]], r=R).texture("marble")

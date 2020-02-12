@@ -1,6 +1,6 @@
 """Assign texture coordinates to a polygon
 """
-from vtkplotter import Mesh, Text, datadir, show
+from vtkplotter import Mesh, Text2D, datadir, show
 
 # define a polygon of 4 vertices:
 polygon = [
@@ -23,4 +23,4 @@ m.texture(datadir+"images/dog.jpg",
           edgeClamp=False,  #  only used when repeat is False
          )
 
-show(m, Text(__doc__), axes=8)
+show(m, Text2D(__doc__), axes=8)

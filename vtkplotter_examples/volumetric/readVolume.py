@@ -19,7 +19,7 @@ printHistogram(vol, logscale=True)
 
 sph = Sphere(pos=(100, 100, 100), r=20)  # add a dummy surface
 
-doc = Text(__doc__, c="k")
+doc = Text2D(__doc__, c="k")
 
 # show both Volume and Mesh
 show(vol, sph, doc, axes=8, verbose=0, zoom=1.4)

@@ -12,6 +12,6 @@ bpts = b.points()[pids]
 
 pts = Points(bpts, r=10, c='red')
 
-labs = b.labels('id').c('blue') # add point labels
+labs = b.labels('id').c('white') # add point labels
 
-show(b, pts, labs, Text(__doc__), zoom=2)
+show(b, pts, labs, Text2D(__doc__), zoom=2)

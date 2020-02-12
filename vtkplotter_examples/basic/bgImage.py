@@ -10,7 +10,7 @@ vp = Plotter(N=9, sharecam=False,
 			 bg=datadir+"images/tropical.jpg",
 			 bg2='light blue')
 
-doc = Text(__doc__, c="k", bg="w")
+doc = Text2D(__doc__, c="k", bg="w")
 a1 = load(datadir+"flamingo.3ds").rotateX(-90)
 a2 = load(datadir+"grasshop.wrl").rotateY(-90)
 logo = load(datadir+"images/vlogo_large.png").alpha(0.3).rotateY(-20)

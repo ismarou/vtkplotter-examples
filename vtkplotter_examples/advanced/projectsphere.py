@@ -7,4 +7,4 @@ e = Ellipsoid()
 
 ef = projectSphereFilter(e).normalize().wireframe(True)
 
-show(e, ef, Text(__doc__))
+show(e, ef, Text2D(__doc__))

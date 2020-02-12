@@ -3,9 +3,19 @@ from vtkplotter import *
 import numpy as np
 
 n = 10000
-x = np.random.normal(2, 1, n)*1.2
-y = np.random.normal(1, 1, n)
+x = np.random.normal(2, 1, n)*2 + 3
+y = np.random.normal(1, 1, n)*1 + 7
+xm, ym = np.mean(x), np.mean(y)
 
-h = histogram(x, y, bins=(25,25), cmap='cividis')
+h = histogram(x, y,
+              bins=50, 
+              aspect=4/3,
+#              cmap='Blues',
+              cmap='PuBu',
+              title='2D Gauss histo',
+              )
 
-show(h, axes=1, viewup='2d')
+# add some object to the plot
+h += Marker('*', s=0.3, c='r').pos(xm, ym, 0.1)
+
+show(h)

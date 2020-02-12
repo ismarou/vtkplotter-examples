@@ -8,7 +8,7 @@ vp = Plotter(axes=1)
 
 e = load(datadir+"embryo.tif", threshold=True) # automatic isosurfacing
 e.normalize().c("gold")
-msg = Text(__doc__)
+msg = Text2D(__doc__)
 
 vp.show(e, msg, viewup='z', interactive=0)
 

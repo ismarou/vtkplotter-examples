@@ -2,7 +2,7 @@
 from vtkplotter import *
 
 embryo = load(datadir+"embryo.tif", threshold=30).normalize()
-txt = Text(__doc__, c='w', bg='lb')
+txt = Text2D(__doc__, c='w', bg='lb')
 
 # mesh used to cut:
 msh = Ellipsoid().pos(0.8, 0.1, -0.3).scale(0.5).wireframe()

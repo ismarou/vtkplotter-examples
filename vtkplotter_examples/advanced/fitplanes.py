@@ -7,7 +7,7 @@ Green histogram is the distribution of residuals from the fitting.
 from vtkplotter import *
 
 vp = Plotter()
-vp += Text(__doc__, pos=1)
+vp += Text2D(__doc__, pos=1)
 
 s = vp.load(datadir+"cow.vtk").alpha(0.3).subdivide().normalize()
 
@@ -23,6 +23,6 @@ for i, p in enumerate(s.points()):
     vp += Arrow(cn, cn + v / 15.0, c="g")
     variances.append(plane.info["variance"])
 
-vp += histogram(variances, yscale=0.003).scale(10).pos(.6,-.3,-.9)
+vp += histogram(variances).scale(25).pos(.6,-.3,-.9)
 
 vp.show(viewup="z")

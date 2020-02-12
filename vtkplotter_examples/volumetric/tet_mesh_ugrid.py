@@ -16,6 +16,6 @@ settings.visibleGridEdges = True
 
 mesh = Mesh(ug).color(cmap).alpha(0.2).addScalarBar(c='w')
 
-txt = Text(__doc__, c='w')
+txt = Text2D(__doc__, c='w')
 
 show([(txt,vol), mesh], N=2, bg='bb')

@@ -30,6 +30,6 @@ for i, p in enumerate(s.points()):
 vp += Points(pts1, c=cols)
 vp += Lines(pts1, pts2, c="black 0.2")
 vp += histogram(vals, bins=20, vrange=[0, 1]).pos(-1,1,-1)
-vp += Text(__doc__, pos=1)
+vp += Text2D(__doc__, pos=1)
 
 vp.show(axes=1)

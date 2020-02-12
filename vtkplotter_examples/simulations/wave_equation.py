@@ -10,7 +10,7 @@ For too large values of dt the simple Euler can diverge.
 # masses makes the programming easier.
 # Adapted from B.Martin (2009) http://www.kcvs.ca/martin by M.Musy
 from __future__ import division, print_function
-from vtkplotter import Plotter, ProgressBar, Point, Text, datadir
+from vtkplotter import Plotter, ProgressBar, Point, Text2D, datadir
 import numpy as np
 
 ####################################################
@@ -111,7 +111,7 @@ vp.actors = pts_actors_eu + pts_actors_rk
 
 # let's also add a fancy background image from wikipedia
 vp.load(datadir+"images/wave_wiki.png", alpha=0.8).scale(0.4).pos(0,-100,-20)
-vp += Text(__doc__, c='b')
+vp += Text2D(__doc__, c='b')
 
 pb = ProgressBar(0, Nsteps, c="red", ETA=1)
 for i in pb.range():

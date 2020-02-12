@@ -1,7 +1,9 @@
-"""Scatter plot of 1M points
-with assigned colors and transparencies
+"""Scatter plot of 1M points with
+assigned colors and transparencies.
 
-Use mouse to zoom, press r to reset
+Use mouse to zoom,
+press r to reset,
+press p to increase point size.
 """
 from vtkplotter import *
 import numpy as np
@@ -26,4 +28,4 @@ t1 = time.time()
 print("-> elapsed time:", t1-t0, "seconds for N:", N)
 
 # use mouse to zoom, press r to reset
-show(pts, Text(__doc__), axes=1, viewup='2d')
+show(pts, Text2D(__doc__), axes=1, viewup='2d')

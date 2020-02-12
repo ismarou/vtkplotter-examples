@@ -5,7 +5,7 @@ to a corner of a linear-elastic cube.
 # Credit https://fenicsproject.discourse.group/t/
 #applying-pointsource-at-two-different-vectors/1459/2
 from dolfin import *
-from vtkplotter.dolfin import plot, Text
+from vtkplotter.dolfin import plot, Text2D
 
 BULK_MOD = 1.0
 SHEAR_MOD = 1.0
@@ -63,5 +63,5 @@ u = Function(V)
 solve(A, u.vector(), B)
 
 # Plot results:
-txt = Text(__doc__)
+txt = Text2D(__doc__)
 plot(u, txt, mode="displacement")

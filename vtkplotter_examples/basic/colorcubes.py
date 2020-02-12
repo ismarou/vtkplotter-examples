@@ -2,7 +2,7 @@
 Show a cube for each available color name
 """
 print(__doc__)
-from vtkplotter import Plotter, Cube, Text
+from vtkplotter import Plotter, Cube, Text2D
 from vtkplotter.colors import colors, getColor
 from operator import itemgetter
 
@@ -18,7 +18,7 @@ for i, sc in enumerate(sorted_colors):
     cname = sc[0]
     rgb = getColor(cname)
     cb = Cube(c=rgb)
-    tname = Text(cname, pos=3)
+    tname = Text2D(cname, pos=3)
     vp.show(cb, tname, at=i)
 
 vp.camera.Azimuth(20)

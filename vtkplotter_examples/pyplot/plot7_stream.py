@@ -21,4 +21,6 @@ sp = streamplot(X,Y, U,V,
 
 pts = Points(prob_pts, r=5, c='white')
 
-show(sp, pts, Text(__doc__), axes=1, bg='bb')
+show(sp, pts,
+     Text2D(__doc__, c='w'),
+     axes=1, bg='bb')

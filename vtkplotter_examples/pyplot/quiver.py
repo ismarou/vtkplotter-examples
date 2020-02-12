@@ -10,4 +10,4 @@ qp = quiver(pts1,       # points
             cmap='jet', # can also be a fixed color
            )
 
-show(qp, Text(__doc__), axes=1)
+show(qp, Text2D(__doc__), axes=1)

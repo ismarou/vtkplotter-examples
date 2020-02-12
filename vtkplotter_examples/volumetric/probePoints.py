@@ -1,18 +1,18 @@
 """
 Probe a voxel dataset at specified points
+and plot a histogram of the values
 """
 from vtkplotter import *
 import numpy as np
 
 vol = load(datadir+"embryo.slc")
 
-pts = np.random.rand(1000, 3)*256
+pts = np.random.rand(2000, 3)*256
 
-apts = probePoints(vol, pts).pointSize(3)
+mpts = probePoints(vol, pts).pointSize(3)
 
-#print(apts.getPointArray()) # check the list of point/cell scalars
-scals = apts.getPointArray(0)
+scals = mpts.getPointArray() # the list of scalars
 
-printHistogram(scals, minbin=1, horizontal=1, c='g')
+h = histogram(scals, xlim=(5,120)).scale(2.2)
 
-show(vol, apts, Text(__doc__), axes=8)
+show(vol, mpts, h, Text2D(__doc__))

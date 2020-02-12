@@ -18,7 +18,7 @@ zsl = vol.zSlice(3)
 # Generate tensor ellipsoids
 tens1 = Tensors(vol, source='ellipse', scale=10)
 tens2 = Tensors(zsl, source='ellipse', scale=20)
-t = Text(__doc__, c='k')
+t = Text2D(__doc__, c='k')
 
 show([[vol, t], tens1], N=2, axes=9, bg='w', viewup='z')
 show(vol, tens2, zsl, axes=9, viewup='z', newPlotter=True)

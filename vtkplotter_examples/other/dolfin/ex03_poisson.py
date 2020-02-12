@@ -1,5 +1,4 @@
-"""
-Poisson equation with Dirichlet conditions.
+"""Poisson equation with Dirichlet conditions.
 
   -Laplace(u) = f    in the unit square
             u = uD   on the boundary
@@ -8,6 +7,7 @@ Poisson equation with Dirichlet conditions.
   (f = -6)
 """
 ########################################################### fenics
+import numpy as np
 from fenics import *
 
 # Create mesh and define function space
@@ -30,7 +30,7 @@ solve( dot(grad(w), grad(v))*dx == f*v*dx,  u, bc)
 f = r'-\nabla^{2} u=f'
 
 ########################################################### vtkplotter
-from vtkplotter.dolfin import plot, Latex, clear
+from vtkplotter.dolfin import plot, Latex, clear, histogram
 
 l = Latex(f, s=0.2, c='w').addPos(.6,.6,.1)
 
@@ -40,3 +40,14 @@ plot(u, l, cmap='jet', scalarbar='h', text=__doc__)
 clear()
 bmesh = BoundaryMesh(UnitSquareMesh(80, 80), "exterior")
 plot(uD, bmesh, cmap='cool', ps=5, legend='boundary') # ps = point size
+
+
+# now make some nonsense plot with the same plot() function
+yvals = u.compute_vertex_values(mesh)
+xvals = np.arange(len(yvals))
+plt = plot(xvals, yvals, 'go-')
+plt.show(newPlotter=True)
+
+# and a histogram
+hst = histogram(yvals)
+hst.show(newPlotter=True)

@@ -1,38 +1,34 @@
-from vtkplotter import plot, show
+from vtkplotter import plot
 import numpy as np
 
-x = np.arange(0, 10, 1)
+x = np.linspace(0, 10, num=21)
 y = 3 * np.sin(x)
+errs = np.ones_like(x) / 2
 
-# assign errors to both x and y
-ye = np.random.rand(10)
-xe = np.random.rand(10)
-
-##############
-plt1 = plot(x, y,
-            xtitle="x variable (mm)",
-            ytitle="y(x)",
-            xlim=(-1, 11),
-            ylim=(-3, 4),
-            line=True,    # join points with a line
-            lc="r",       # line color
-            marker="*",   # marker style
-            mc="r",       # marker color
-            ms=.2,
+################# first plot
+plt = plot(
+    x, y,
+    "*r-",           # markers: *,o,p,h,D,d,v,^,s,x,a
+    xtitle="x variable (mm)",
+    ytitle="y(x)",
+    aspect=16 / 9,   # aspect ratio x/y of plot
+    # xlim=(-1, 14), # specify x range
+    # ylim=(-4, 5),  # specify y range
 )
 
-##############
-plt2 = plot(x+1, y+0.2,
-            xerrors=xe,   # show error bars
-            yerrors=ye,
-            xlim=(-1, 11),
-            ylim=(-3, 4),
-            splined=True,
-            lc="b",
-            marker="s",   # o,p,*,h,D,d,v,^,s,x,a
-            ms=.1,
-            axes=0
+################# plot on top of plt
+plt.plot(
+    x+3, y,
+    "sb--",
+    xerrors=errs,    # set error bars on x
+    yerrors=errs,    # set error bars on y
+    spline=True,     # continous line through points
+    lw=1.5,
 )
 
-##############
-show(plt1, plt2, axes=0)
+################## plot again on top of plt
+plt.plot(x, y/5, "g")
+
+
+##################
+plt.show()

@@ -20,8 +20,8 @@ cols = getColor(nrs)
 
 a2 = Arrows(coords1, coords2, c=cols, scale=0.5)
 
-t1 = Text('Color arrows by size\nusing a color map')
-t2 = Text('Color arrows by an array\nand scale them')
+t1 = Text2D('Color arrows by size\nusing a color map', c='w')
+t2 = Text2D('Color arrows by an array\nand scale them', c='w')
 
 # draw 2 groups of objects on two renderers
 show([[s1, s2, a1, t1], [s1, s2, a2, t2]], N=2, bg='bb')

@@ -23,11 +23,11 @@ plt = plot(x,y,
            pad=0.0,        # tight margins, no padding
 )
 
-# Add a grey transparent rectangle as an exclusion region:
-plt += Rectangle([1.2,0.5], [2.7,5], alpha=0.2, c='k')
+# Add a grey transparent rectangle to represent an exclusion region:
+plt += Rectangle([1,0.5], [2.7,5], alpha=0.2, c='k')
 
 # Add some text and latex formula
-plt += Text("excluded", pos=(1.4, 3.5), s=0.2, c='k').rotateZ(20)
+plt += Text("excluded", s=0.2, c='k').rotateZ(20).pos(1.3, 3.7)
 plt += Latex(r"y(t)=2+2\cdot\frac{\sin(2t)}{(t+1)}", pos=(4.7, 4.7), s=.8, c='db')
 
 # Add a star marker at maximum of function (at z=0.1, so it stays on top):
@@ -35,8 +35,5 @@ plt += Marker('*', pos=(x[idx], y[idx], 0.1), c='blue')
 
 # Add a dashed line for the minimum
 plt += DashedLine([x[0], miny], [x[-1], miny])
-
-# Add an arrow to indicate some imaginary something
-#plt += Arrow2D( (3.3,0.5), (3.8,1.5), c='dg')
 
 plt.show()

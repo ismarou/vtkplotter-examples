@@ -3,7 +3,7 @@ with or without automatic isosurfacing
 """
 from vtkplotter import *
 
-comment = Text(__doc__)
+comment = Text2D(__doc__)
 
 # Read volume data from a tif file:
 f = datadir+"embryo.tif"

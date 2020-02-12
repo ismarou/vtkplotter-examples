@@ -1,6 +1,5 @@
-"""Example usage of alignICP() method:
-generate two random sets of points and
-align them using the Iterative Closest Point algorithm.
+"""Generate two random sets of points and align
+them using the Iterative Closest Point algorithm.
 """
 from random import uniform as u
 from vtkplotter import *
@@ -23,7 +22,7 @@ aligned_pts1 = alignICP(vpts1, vpts2)
 # draw arrows to see where points end up
 arrows = Arrows(pts1, aligned_pts1, c="k", s=0.7, alpha=0.2)
 
-show(vpts1, vpts2, Text(__doc__), at=0, N=2, axes=1)
+show(vpts1, vpts2, Text2D(__doc__), at=0, N=2, axes=1)
 
 show(aligned_pts1, arrows, vpts2, at=1, interactive=1)
 

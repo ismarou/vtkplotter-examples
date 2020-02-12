@@ -12,4 +12,4 @@ mesh.pointColors(pts[:,2], cmap='terrain').addScalarBar()
 
 isols = mesh.isolines(n=10, vmin=-0.1).color('w')
 
-show(mesh, isols, Text(__doc__), axes=1, viewup='z')
+show(mesh, isols, Text2D(__doc__), axes=1, viewup='z')

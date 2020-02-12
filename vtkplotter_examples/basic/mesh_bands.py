@@ -7,7 +7,7 @@ from numpy import linspace
 # useDepthPeeling improves the rendering of translucent objects.
 settings.useDepthPeeling = True
 
-doc = Text(__doc__, c="k", bg="lg")
+doc = Text2D(__doc__, c="k", bg="lg")
 
 
 hyp = Hyperboloid()

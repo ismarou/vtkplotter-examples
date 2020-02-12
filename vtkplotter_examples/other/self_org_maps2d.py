@@ -26,8 +26,8 @@ class SOM:
         sigma = sigma[0] * (sigma[1] / sigma[0]) ** t
         I = np.random.randint(0, len(self.samples), n_epoch)
         self.samples = self.samples[I]
-        pts = Points(self.samples, r=2)
-        doc = Text(__doc__)
+        pts = Points(self.samples, r=2, c='darkred')
+        doc = Text2D(__doc__)
 
         pb = ProgressBar(0,n_epoch)
         for i in pb.range():
@@ -53,6 +53,7 @@ class SOM:
                 for i in range(n):
                     for j in range(n):
                         grdpts[i*n+j] = (x[i,j], y[i,j], z[i,j])
+                grd.points(grdpts)
                 show(doc, pts, grd, axes=6, azimuth=2, interactive=False)
 
         interactive()

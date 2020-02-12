@@ -20,7 +20,7 @@ probe= Grid(pos=[9,0,30], normal=[1,0,0], sx=5, sy=5, resx=6, resy=6)
 
 stream = streamLines(domain, probe, direction='backwards')
 
-comment = Text(__doc__, c='w')
+comment = Text2D(__doc__, c='w')
 box = Mesh(domain).alpha(0.1)
 
 show(stream, probe, box, comment, axes=8, bg='bb')

@@ -7,7 +7,7 @@ from vtkplotter import Text, Paraboloid, Hyperboloid, Plotter, show
 
 mesh = Paraboloid()
 
-vp1 = show(mesh, Text(__doc__), title='First Plotter instance')
+vp1 = show(mesh, Text2D(__doc__), title='First Plotter instance')
 
 # Now press 'q' to exit the window interaction,
 # windows stays open but not reactive anymore.

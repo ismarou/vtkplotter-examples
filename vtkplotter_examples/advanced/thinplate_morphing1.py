@@ -29,4 +29,4 @@ warped.alpha(0.4).color("b")
 
 apts = Points(ptsource, r=15, c="r")
 
-show(mesh, warped, apts, Text(__doc__), viewup="z", axes=1)
+show(mesh, warped, apts, Text2D(__doc__), viewup="z", axes=1)

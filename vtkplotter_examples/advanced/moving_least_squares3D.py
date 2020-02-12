@@ -11,7 +11,7 @@ from vtkplotter import *
 
 # generate uniform points on sphere (tol separates points by 2% of mesh size)
 cc = Sphere(res=200).clean(tol=0.02).points()
-txt = Text(__doc__, c="k")
+txt = Text2D(__doc__, c="k")
 
 a, b, noise = 0.2, 0.4, 0.1  # some random warping parameters, and noise factor
 sets = []

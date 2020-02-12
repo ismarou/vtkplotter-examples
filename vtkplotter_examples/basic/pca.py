@@ -2,7 +2,7 @@
 50% of a cloud of Points, then check if points are inside the surface.
 Extra info is stored in mesh.info['sphericity'], 'va', 'vb', 'vc'.
 """
-from vtkplotter import Plotter, pcaEllipsoid, Points, Text
+from vtkplotter import Plotter, pcaEllipsoid, Points, Text2D
 import numpy as np
 
 
@@ -17,7 +17,7 @@ opts = elli.getMesh(0).insidePoints(pts, invert=True)
 
 vp += Points(ipts, c="g")
 vp += Points(opts, c="r")
-vp += [elli, Text(__doc__)]
+vp += [elli, Text2D(__doc__)]
 
 print("inside  points #", len(ipts))
 print("outside points #", len(opts))

@@ -15,8 +15,8 @@ scals = np.linspace(0, 1, nv)  # coloring by index nr of vertex
 
 man1.addPointScalars(scals, "mypointscalars")  # add a vtkArray to mesh
 # print(man1.getPointArray('mypointscalars')) # info can be retrieved this way
-man1.addScalarBar(c='white')  # add a default scalarbar
-show(man1, at=0, N=3, axes=0, elevation=-60)
+man1.addScalarBar()  # add a default scalarbar
+show(man1, at=0, N=3, axes=4, elevation=-60)
 
 
 ##################################### pointColors
@@ -35,7 +35,7 @@ man3.cellColors(scals, cmap="afmhot")
 # print(man3.getPointArray('cellColors_afmhot')) # info can be retrieved this way
 
 # add some oriented 3D text
-txt = Text("Floor temperature is 35C", pos=[1, -0.9, -1.7], s=0.1).rotateZ(90)
+txt = Text("Floor temperature is 35C", s=0.1).rotateZ(90).pos(1,-0.9,-1.7)
 
 # add a fancier 3D scalar bar embedded in the scene
 man3.addScalarBar3D(pos=(-1, 0, -1.7))

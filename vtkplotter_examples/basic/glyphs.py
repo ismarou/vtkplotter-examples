@@ -5,7 +5,7 @@ is shown with various orientation options
 from vtkplotter import *
 from numpy.random import rand
 
-t = Text(__doc__) # pick the above header as description
+t = Text2D(__doc__, c='w') # pick the above header as description
 
 s = Sphere(res=12).c('white').alpha(0.1).wireframe()
 

@@ -17,4 +17,4 @@ densecloud = densifyCloud(apts, .05, closestN=10, maxIter=1)
 print(apts.N(), '->', densecloud.N())
 
 ppp = Points(densecloud.points())
-show(apts, densecloud, Text(__doc__), axes=8)
+show(apts, densecloud, Text2D(__doc__), axes=8)

@@ -15,4 +15,4 @@ printc('IDs of cells within bounds:', ids, c='g')
 p1 = Plane(normal=(1,0,0), sx=2, sy=2).x(x1).c('gray').alpha(0.5)
 p2 = Plane(normal=(1,0,0), sx=2, sy=2).x(x2).c('gray').alpha(0.5)
 
-show(mesh, p1, p2, Text(__doc__), axes=1)
+show(mesh, p1, p2, Text2D(__doc__), axes=1)

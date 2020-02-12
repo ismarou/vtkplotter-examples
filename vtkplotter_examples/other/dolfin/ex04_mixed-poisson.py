@@ -29,7 +29,7 @@ L = -f * v * dx
 class BoundarySource(UserExpression):
     def __init__(self, mesh, **kwargs):
         self.mesh = mesh
-        super().__init__(**kwargs)
+#        super().__init__(**kwargs)
     def eval_cell(self, values, x, ufc_cell):
         cell = Cell(self.mesh, ufc_cell.index)
         n = cell.normal(ufc_cell.local_facet)
@@ -52,7 +52,7 @@ solve(a == L, w, bc)
 
 
 ########################################################### vtkplotter
-from vtkplotter.dolfin import plot, Text
+from vtkplotter.dolfin import plot, Text2D
 
 # Plot solution on mesh, and warp z-axis by the scalar value
 plot(u, warpZfactor=0.8, legend='u', text=__doc__)

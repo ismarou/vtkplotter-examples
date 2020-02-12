@@ -1,31 +1,26 @@
-from vtkplotter import histogram, show
 import numpy as np
+from vtkplotter import *
 
-h1 = histogram(np.random.randn(500)*3+10,
-               xtitle='random variable x',
-               ytitle='dN/dx',
-               yscale=0.2,
-               xlim=(-2,20),
-               ylim=(0,25),
-               fill=True,
-               outline=False,
-               errors=True,
-               axes=True,
-               )
+np.random.seed(3)
+data1 = np.random.randn(250)
+data2 = (np.random.rand(250)-0.5)*12
 
-h2 = histogram(np.random.randn(500)*2+ 7,
-               yscale=0.2, # same yscale!
-               xlim=(-2,20),
-               ylim=(0,25),
-               fill=False,
-               lc='firebrick',
-               lw=4,
-               axes=False,
-               )
-h2.z(0.1) # put h2 in front of h1 by setting its z-coord
+hst1 = histogram(data1,
+                 bins=30,
+                 errors=True,
+                 aspect=4/3,
+                 title='My distributions',
+                 c='red',
+                 marker='o',
+                )
 
-# pick the 16th bin and color it tomato
-h1.unpack(15).color('tomato').alpha(0.7)
+# pick the 16th bin and color it violet
+hst1.unpack(15).c('violet')
+hst1 += Text('Highlight a\nspecial bin', pos=(0.5,20), c='v')
 
-# show locking scene to the 2d xy plane
-show(h1, h2, viewup='2d')
+# A second histogram:
+# make it in same format as hst1 so it can be superimposed
+hst2 = histogram(data2, format=hst1, alpha=0.5)
+
+# Show both:
+show(hst1, hst2)

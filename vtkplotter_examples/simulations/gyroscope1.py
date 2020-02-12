@@ -27,7 +27,7 @@ cm = gpos + 0.5 * Ls * gaxis  # center of mass of shaft
 
 # ############################################################ the scene
 vp = Plotter(axes=0, interactive=0)
-vp += Text(__doc__)
+vp += Text2D(__doc__)
 
 shaft = Cylinder([[0, 0, 0], Ls * gaxis], r=0.03, c="dg")
 rotor = Cylinder([(Ls - 0.55) * gaxis, (Ls - 0.45) * gaxis], r=R, c="t")

@@ -27,7 +27,7 @@ vp.keyPressFunction = myfnc  # make it known to Plotter class
 
 vp.load(datadir+"bunny.obj")
 
-vp += Text(__doc__)
+vp += Text2D(__doc__)
 
 printc("\nPress c to execute myfnc()", c=1)
 vp.show()

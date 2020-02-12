@@ -3,7 +3,7 @@ Modify mesh vertex positions.
 """
 from vtkplotter import *
 
-t = Text(__doc__)
+t = Text2D(__doc__)
 
 dsc = Disc().lineWidth(0.1)
 coords = dsc.points()

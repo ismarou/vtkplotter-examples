@@ -9,7 +9,7 @@ tcs = load(datadir+'timecourse1d/reference_*.vtk')
 n = len(tcs)
 printc('loaded list of meshes of length =', n, c='yellow')
 
-show(tcs, Text(__doc__))
+show(tcs, Text2D(__doc__))
 
 
 ######################################## write them to 1 numpy file

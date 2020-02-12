@@ -1,4 +1,4 @@
-from vtkplotter import Latex, Point, show
+from vtkplotter import Latex, show
 
 # https://matplotlib.org/tutorials/text/mathtext.html
 
@@ -14,7 +14,6 @@ l = Latex(latex4, s=1, c='white', bg='', alpha=0.9, usetex=False, fromweb=False)
 l.crop(0.3, 0.3) # crop top and bottom 30%
 l.pos(2,0,0)
 
-p = Point()
 box = l.box() # return the bounding box of a mesh
 
-show(p, l, box, axes=8)
+show(l, box, axes=8)

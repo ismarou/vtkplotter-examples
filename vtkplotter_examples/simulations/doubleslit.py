@@ -49,6 +49,6 @@ vp += Grid(sx=0.1, sy=0.1, resx=6, resy=6, c="w", alpha=0.1)
 vp += Line([0, 0, 0], [0, 0, -D], c="w", alpha=0.1)
 vp += Text("source plane", pos=[-0.04, -0.05, 0], s=0.002, c="gray")
 vp += Text("detector plane D = "+str(D)+" m", pos=[-0.04, -0.05, -D], s=0.002, c="gray")
-vp += Text(__doc__, c="lb")
+vp += Text2D(__doc__, c="lb")
 
 vp.show(zoom=1.1)

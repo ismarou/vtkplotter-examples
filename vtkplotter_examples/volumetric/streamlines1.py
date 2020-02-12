@@ -17,6 +17,6 @@ stream = streamLines(mesh, probe,
                      maxPropagation=0.3,
                      extrapolateToBoundingBox={'dims':(10,10,10)})
 
-msg = Text(__doc__, c='k')
+msg = Text2D(__doc__, c='k')
 
 show(stream, probe, mesh, mesh.box(), msg, axes=3, viewup='z')

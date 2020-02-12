@@ -25,4 +25,4 @@ apts = Points(sources).c("red")
 
 arro = Arrow(sources[0], targets[0])
 
-show(mesh, arro, warp, apts, Text(__doc__), viewup="z", axes=1)
+show(mesh, arro, warp, apts, Text2D(__doc__), viewup="z", axes=1)

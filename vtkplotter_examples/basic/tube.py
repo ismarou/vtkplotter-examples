@@ -5,7 +5,7 @@ print(__doc__)
 
 from vtkplotter import *
 
-doc = Text(__doc__)
+doc = Text2D(__doc__)
 
 
 ln = [[sin(x), cos(x), x / 2] for x in arange(0,9, 0.1)]

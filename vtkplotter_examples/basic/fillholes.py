@@ -11,6 +11,6 @@ a = load(datadir+"bunny.obj")
 b = a.clone().fillHoles(size=0.1)
 b.color("b").wireframe(True).legend("filled mesh")
 
-doc = Text(__doc__)
+doc = Text2D(__doc__)
 
 show(a, b, doc, elevation=-70)

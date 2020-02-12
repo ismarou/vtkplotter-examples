@@ -66,8 +66,8 @@ class Morpher:
         T = self.morphed_source.getTransform()
         grid1 = grid0.alpha(0.3).wireframe(0).clone().applyTransform(T) # warp the grid
 
-        text1 = Text(__doc__, c="k")
-        text2 = Text("morphed vs target\nn.d.f.="+str(self.ndf), c="k")
+        text1 = Text2D(__doc__, c="k")
+        text2 = Text2D("morphed vs target\nn.d.f.="+str(self.ndf), c="k")
         arrows = Arrows(self.ptsource, self.pttarget, c='gray', alpha=0.5, s=1)
 
         self.morphed_source.pointSize(10).c('g')

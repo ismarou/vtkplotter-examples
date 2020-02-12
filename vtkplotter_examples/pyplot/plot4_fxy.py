@@ -19,11 +19,12 @@ show(f1, f2, f3, N=3, axes=1, sharecam=False)
 
 
 ########################################################## COMPLEX
-comment = Text("""
+comment = Text2D("""
 Vertical axis shows the real part of complex z:
     z = sin(log(x*y))
 Color map the value of the imaginary part
-(green=positive, purple=negative)""")
+(green=positive, purple=negative)"""
+)
 
 plt = plot(lambda x,y: sin(log(x*y))/25, mode='complex')
 

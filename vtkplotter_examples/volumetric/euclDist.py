@@ -4,10 +4,10 @@ of the Euclidean distance values.
 """
 from vtkplotter import *
 
-t = Text(__doc__, c='white')
+t = Text2D(__doc__, c='white')
 e = load(datadir+'embryo.tif') # Volume
 
-edt = euclideanDistanceVolume(e)
+edt = e.euclideanDistance()
 
-show([(e,t), edt], N=2, viewup='z', zoom=1.5)
+show([(e,t), edt], N=2, viewup='z', axes=1, zoom=1.5)
 

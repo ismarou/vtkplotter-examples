@@ -6,7 +6,7 @@ from vtkplotter import *
 objs = load(datadir+'timecourse1d.npy') # list of vtkActors
 
 # show the biggest and continue (return a Plotter instance)
-vp = show(objs[-1], axes=True, interactive=False, bg='bb')
+vp = show(objs[-1], axes=1, interactive=False, bg='bb')
 vp.actors = objs # set Plotter internal list of objs to be shown
 
 # switch off all the others
@@ -22,11 +22,12 @@ def sliderfunc(widget, event):
     hours = ' %2sh (' % (k+249 -days*24)
     limbage = str(days)+ "d"+ hours + str(k+249)+"h)"
     widget.GetRepresentation().SetTitleText(limbage)
+    vp.renderer.ResetCamera()
 
 vp.addSlider2D(sliderfunc, 0, len(objs)-1,
                pos=[(0.4,0.1), (0.9,0.1)], showValue=False)
 
-vp += Text(__doc__, font='SpecialElite', s=1.2)
+vp += Text2D(__doc__, font='SpecialElite', s=1.2, c='w')
 vp += load(datadir+'images/limbs_tc.jpg').scale(0.0154).y(10.0)
 vp += Line([(0,8), (0,10), (28.6,10), (4.5,8)], c='gray')
 

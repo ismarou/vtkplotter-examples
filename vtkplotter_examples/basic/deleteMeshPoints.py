@@ -11,4 +11,4 @@ ids = pu.closestPoint(pt, N=500, returnIds=True)
 
 pu.deletePoints(ids, renamePoints=1)
 
-show(Point(pt), pu, Text(__doc__))
+show(Point(pt), pu, Text2D(__doc__), axes=1)

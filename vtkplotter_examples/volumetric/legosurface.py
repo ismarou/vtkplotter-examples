@@ -16,6 +16,6 @@ lego = vol.legosurface(vmin=60, cmap='seismic')
 # make colormap start at 40
 lego.addScalarBar(vmin=40, horizontal=1, c='k')
 
-comment = Text(__doc__, c='k')
+comment = Text2D(__doc__, c='k')
 
 show(lego, comment, axes=1, viewup='z')

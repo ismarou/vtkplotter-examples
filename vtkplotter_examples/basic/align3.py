@@ -1,11 +1,10 @@
-"""Example usage of alignProcrustes() method:
-generate 3 random sets of points and align
+"""Generate 3 random sets of points and align
 them using Procrustes method.
 """
 from __future__ import division, print_function
 from random import uniform as u
 
-from vtkplotter import Plotter, alignProcrustes, Text, Points
+from vtkplotter import Plotter, alignProcrustes, Text2D, Points
 
 vp = Plotter(shape=[1, 2], verbose=0, axes=2, sharecam=0)
 
@@ -20,7 +19,7 @@ vpts1 = Points(pts1, c="r").legend("set1")
 vpts2 = Points(pts2, c="g").legend("set2")
 vpts3 = Points(pts3, c="b").legend("set3")
 
-vp.show(vpts1, vpts2, vpts3, at=0)
+vp.show(vpts1, vpts2, vpts3, Text2D(__doc__), at=0)
 
 # find best alignment among the n sets of Points,
 # return an Assembly object formed by the aligned sets
@@ -28,4 +27,4 @@ aligned = alignProcrustes([vpts1, vpts2, vpts3])
 
 # print(aligned.info['transform'])
 
-vp.show(aligned, Text(__doc__), at=1, interactive=1)
+vp.show(aligned, at=1, interactive=1)

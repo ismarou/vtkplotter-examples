@@ -4,7 +4,7 @@ over an ellipsoidal neighborhood.
 """
 from vtkplotter import *
 
-t = Text(__doc__, c='white')
+t = Text2D(__doc__, c='white')
 em = load(datadir+'embryo.slc').printHistogram(logscale=1)
 
 eroded = em.clone().erode( neighbours=(5,5,5)).printHistogram(logscale=1)

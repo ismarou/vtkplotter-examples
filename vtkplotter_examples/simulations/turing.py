@@ -9,7 +9,7 @@ import numpy as np
 
 settings.renderPointsAsSpheres = False
 
-doc = Text(__doc__, c="k")
+doc = Text2D(__doc__, c="k")
 
 # Load (with numpy) an existing set of mesh points and a list
 # of scalars that represent the concentration of a substance

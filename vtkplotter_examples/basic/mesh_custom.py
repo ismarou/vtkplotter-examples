@@ -27,4 +27,4 @@ alphas = [i/10. for i in range(10)]
 man.pointColors(scals, cmap=mymap, alpha=alphas)
 man.addScalarBar()
 
-show(man, Text(__doc__), viewup="z", axes=8)
+show(man, Text2D(__doc__), viewup="z", axes=8)

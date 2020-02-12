@@ -20,4 +20,4 @@ def rhofunc(theta, phi):
 #  the red Points where rho is a complex number:
 spl = plot(rhofunc, mode='spheric', cmap='viridis')
 
-show(spl, Text(__doc__), axes=12, viewup='z')
+show(spl, Text2D(__doc__), axes=12, viewup='z')

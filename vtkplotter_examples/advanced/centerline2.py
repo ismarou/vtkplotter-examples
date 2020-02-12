@@ -25,4 +25,4 @@ for i in range(niter):
     show(t, at=i, N=niter, elevation=-1, bg='bb')
 t.clean(tol)
 
-show(tube, t, Text(__doc__), axes=1, bg='bb', newPlotter=True)
+show(tube, t, Text2D(__doc__), axes=1, bg='bb', newPlotter=True)

@@ -1,6 +1,6 @@
 from vtkplotter import Hyperboloid, histogram, show
 import numpy as np
-np.random.seed(3)
+np.random.seed(1)
 
 ##################################################################
 radhisto = histogram(np.random.rand(200)*6.28,
