@@ -1,5 +1,5 @@
 """Find the overlap area of 2 triangles"""
-from vtkplotter import Mesh, Text, show
+from vtkplotter import Mesh, Text2D, show
 import numpy as np
 
 verts1 = [(1.9, 0.5), (2.1, 0.8), (2.4, 0.4)]

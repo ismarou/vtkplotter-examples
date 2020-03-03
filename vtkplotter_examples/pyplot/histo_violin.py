@@ -18,4 +18,4 @@ violin(np.random.chisquare(9, n)/4,
        x=10, vlim=(0,10), c='lg', lc='dg')
 
 
-show(..., axes={'xtitle':False, 'ytitle':'distribution'})
+show(..., axes=dict(xtitle=False, ytitle='distribution'))

@@ -7,7 +7,8 @@ radhisto = histogram(np.random.rand(200)*6.28,
                      mode='polar',
                      title="random orientations",
                      bins=10,
-                     #c='orange', #uniform color
+                     c=range(10), #'orange', #uniform color
+                     alpha=0.8,
                      labels=["label"+str(i) for i in range(10)],
                     )
 

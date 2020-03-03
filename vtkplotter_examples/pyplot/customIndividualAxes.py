@@ -1,6 +1,5 @@
-"""Create individual axes to each
- separate object in a scene. Access any
- element to change its size and color"""
+"""Create individual axes to each separate object in a scene. 
+Access any element to change its size and color"""
 from vtkplotter import *
 
 # Create a bunch of objects
@@ -27,8 +26,8 @@ axes3.unpack('xNumericLabel7').scale(5).c('fuchsia')
 #  Options are passed through a dictionary
 show(pt, s1,axes1, s2,axes2, s3,axes3, Text2D(__doc__),
      viewup='z',
-     axes={'c':'black',
-           'numberOfDivisions':10,
-           'yzGrid':False,
-           },
+     axes=dict(c='black',
+               numberOfDivisions=10,
+               yzGrid=False,
+              ),
      )

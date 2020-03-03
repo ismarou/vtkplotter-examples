@@ -2,7 +2,7 @@
 Example usage of removeOutliers()
 and cluster() methods.
 """
-from vtkplotter import show, cluster, removeOutliers, Text
+from vtkplotter import show, cluster, removeOutliers, Text2D
 import numpy as np
 
 

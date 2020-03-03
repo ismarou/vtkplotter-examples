@@ -13,6 +13,7 @@ mpts = probePoints(vol, pts).pointSize(3)
 
 scals = mpts.getPointArray() # the list of scalars
 
-h = histogram(scals, xlim=(5,120)).scale(2.2)
+h = histogram(scals, xlim=(5,120), xtitle='voxel value')
+h.scale(2.2)
 
 show(vol, mpts, h, Text2D(__doc__))
